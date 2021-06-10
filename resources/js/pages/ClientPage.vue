@@ -60,7 +60,7 @@
             <ul class="nav">
               <li v-if="auth" class="nav-item">
                 <router-link class="nav-link " aria-current="page" to="/login"
-                  >Login</router-link
+                  ><i class="fas fa-sign-in-alt mx-1"></i>Login</router-link
                 >
               </li>
               <li v-else class="nav-item">
@@ -81,7 +81,7 @@
 
 <script>
 export default {
-  /* TODO MOSTAR SP}OLO LOGIN O ADMIN */
+  /* TODO MOSTAR SP}OLO LOGIN O ADMIN+ */
   data() {
     return {
       auth: ""

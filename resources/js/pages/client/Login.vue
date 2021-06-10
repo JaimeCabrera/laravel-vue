@@ -55,7 +55,7 @@ export default {
           if (res.status == 200) {
             localStorage.setItem("token", res.data.access_token);
             localStorage.setItem("auth", true);
-            this.$router.push({ name: "admin" });
+            this.$router.push({ name: "admin-products" });
           }
         })
         .catch(e => {
