@@ -9,6 +9,7 @@ import LoginPage from "../pages/client/Login";
 import AdminPage from "../pages/AdminPage.vue";
 import Products from "../pages/admin/Products";
 import Categories from "../pages/admin/Categories";
+import AddProduct from "../pages/admin/AddProduct";
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -32,6 +33,11 @@ export default new VueRouter({
           path: "",
           component: Products,
           name: "admin-products"
+        },
+        {
+          path: "/admin/products/add",
+          component: AddProduct,
+          name: "add-product"
         },
         {
           path: "/admin/categories",
