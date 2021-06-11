@@ -1,0 +1,26 @@
+$primary: #71b85f;
+$secondary: #2c343b;
+
+.subtitle {
+  font-size: 40px;
+  font-weight: 500;
+  color: $secondary;
+  padding-top: 35px;
+}
+.subtitle-p {
+  font-size: 50px;
+  font-weight: 500;
+  color: white;
+  justify-content: center;
+  padding-top: 25px;
+  border-bottom: 2px solid white;
+}
+/* contact section */
+.text-green {
+  color: $primary;
+}
+.phone-number {
+  font-size: 20px;
+  font-weight: 500;
+  color: #a7a9a7;
+}

@@ -36,7 +36,7 @@
           <div class="d-flex">
             <ul class="nav">
               <li v-if="auth" class="nav-item">
-                <a class="nav-link" href="" @click="handleLogout"
+                <a class="btn btn-primary" @click="handleLogout"
                   ><i class="fas fa-sign-out-alt text-white-50 mx-2"></i
                   >Salir</a
                 >
@@ -101,6 +101,7 @@ export default {
           headers: { Authorization: `Bearer ${token}` }
         })
         .then(res => {
+          console.log("saliedno");
           console.log(res);
           localStorage.setItem("auth", false);
           localStorage.removeItem("token");

@@ -1,7 +1,7 @@
 <template>
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center m-lg-4">
     <div class="col-6">
-      <form class="card shadow-sm" @submit.prevent="handleLogin">
+      <form class="card shadow border-2" @submit.prevent="handleLogin">
         <div class="card-header">
           Login
         </div>

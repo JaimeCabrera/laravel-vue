@@ -22,7 +22,7 @@
     </div>
     <div v-else class="row">
       <div class="col-12">
-        <div class="card mb-4 mt-5 shadow">
+        <div class="card mb-4 mt-5 shadow-lg">
           <div class="card-header ">
             <h4 class="m-0 font-weight-bold text-primary">
               Productos
@@ -88,10 +88,38 @@ export default {
       loading: false
     };
   },
+  created() {
+    this.getUser();
+  },
   mounted() {
     this.getAllProducts();
   },
   methods: {
+    getUser() {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        localStorage.setItem("auth", false);
+        return this.$router.push("/login");
+      } else {
+        this.auth = localStorage.getItem("auth");
+      }
+      axios
+        .get("/api/user", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then(res => {
+          if (!res.data.id) {
+            localStorage.setItem("auth", false);
+            this.$router.push("/login");
+          }
+        })
+        .catch(e => {
+          localStorage.setItem("auth", false);
+          this.$router.push("/login");
+        });
+    },
     getAllProducts() {
       this.loading = true;
       axios

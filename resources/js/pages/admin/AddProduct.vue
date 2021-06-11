@@ -14,7 +14,7 @@
           </div>
           <div class="card-body p-4">
             <form enctype="multipart/form-data">
-              <div class="row">
+              <div class="row mb-4">
                 <div class="col">
                   <div class="form-group ">
                     <label for="inputState">Seleciona la Categoria</label>
@@ -70,7 +70,7 @@
                   />
                 </div>
               </div>
-              <div class="row">
+              <div class="row mb-4">
                 <div class="col">
                   <div class="form-group">
                     <label for="">Descripcion corta</label>
@@ -94,7 +94,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row mb-4">
                 <div class="col">
                   <div class="form-group">
                     <label for="imagen">Imagen del producto</label>

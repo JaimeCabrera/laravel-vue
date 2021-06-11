@@ -1,13 +1,32 @@
 <template>
-    <h2>aca va tod el index</h2>
+  <div>
+    <slider-ccomponent></slider-ccomponent>
+    <services-component></services-component>
+    <products-component></products-component>
+    <contact-component></contact-component>
+  </div>
 </template>
 
 <script>
+import ContactComponent from "../../components/client/ContactComponent.vue";
+import ProductsComponent from "../../components/client/ProductsComponent.vue";
+import ServicesComponent from "../../components/client/ServicesComponent.vue";
+import SliderCcomponent from "../../components/client/SliderCcomponent.vue";
 export default {
-    mounted() {
-        console.log("items del index");
-    }
+  components: {
+    SliderCcomponent,
+    ServicesComponent,
+    ProductsComponent,
+    ContactComponent
+  },
+  mounted() {
+    console.log("items del index");
+  }
 };
 </script>
 
-<style></style>
+<style>
+.bg-green {
+  background-color: #71b85f;
+}
+</style>
