@@ -6172,6 +6172,24 @@ var token = localStorage.getItem("token");
       })["catch"](function (e) {
         console.log(e);
       });
+    },
+    deleteProduct: function deleteProduct(id) {
+      var _this3 = this;
+
+      axios["delete"]("/api/products/".concat(id), {
+        Headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (res) {
+        if (res.data.ok) {
+          _this3.products = _this3.products.filter(function (prod) {
+            return prod.id !== id;
+          });
+        }
+      })["catch"](function (e) {
+        console.log(e);
+      });
+      console.log("elimimando", id);
     }
   }
 });

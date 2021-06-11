@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
 
@@ -52,7 +53,7 @@ class ProductController extends Controller
         $img_url = $request['image']->store('img-products', 'public');
 
         // $img = Image::make($request['image'])->fit(100, 100);
-        $img = Image::make(public_path("storage/{$img_url}"))->fit(400, 400);
+        $img = Image::make(public_path("storage/{$img_url}"))->fit(500, 500);
         $img->save();
         // Storage::put('img', $img);
         // $img->store('img');
@@ -103,6 +104,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        /* eliminado el direcotirio de las imagens del url */
+        $productImage = str_replace('img-products/', '', $product->image);
+        // return response()->json(['img' => public_path('/' . $product->image)]);
+        Storage::delete('public/' . $product->image);
+        $product->delete();
+        return response()->json(['ok' => true, 'product' => $product]);
     }
 }

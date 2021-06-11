@@ -131,6 +131,21 @@ export default {
         .catch(e => {
           console.log(e);
         });
+    },
+    deleteProduct(id) {
+      axios
+        .delete(`/api/products/${id}`, {
+          Headers: { Authorization: `Bearer ${token}` }
+        })
+        .then(res => {
+          if (res.data.ok) {
+            this.products = this.products.filter(prod => prod.id !== id);
+          }
+        })
+        .catch(e => {
+          console.log(e);
+        });
+      console.log("elimimando", id);
     }
   }
 };
