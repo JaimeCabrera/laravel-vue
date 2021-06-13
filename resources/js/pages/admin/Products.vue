@@ -2,10 +2,10 @@
   <div class="container-fluid mt-5">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-2">
-      <h6 class="mb-0 text-gray-600">Modulo de productos</h6>
+      <h6 class="mb-0 text-gray-600"></h6>
       <router-link
         v-bind:to="{ name: 'add-product' }"
-        class="d-none d-sm-inline-block btn btn-primary shadow"
+        class="d-none d-sm-inline-block btn btn-primary btn-lg shadow"
       >
         <i class="fas fa-plus fa-sm text-white-50 mx-1"></i> Agregar Nuevo
         Producto
@@ -20,7 +20,7 @@
     <div v-if="loading" class="row">
       Cargando...
     </div>
-    <div v-else class="row">
+    <div v-else class="row ">
       <div class="col-12">
         <div class="card mb-4 mt-5 shadow-lg">
           <div class="card-header ">
@@ -46,7 +46,7 @@
                   <td scope="row">{{ index + 1 }}</td>
                   <td>{{ product.name }}</td>
                   <td>{{ product.price }}</td>
-                  <td>{{ product.description }}</td>
+                  <td>{{ product.short_description }}</td>
                   <td>{{ product.category.name }}</td>
                   <td>
                     <img

@@ -104,9 +104,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        /* eliminado el direcotirio de las imagens del url */
-        $productImage = str_replace('img-products/', '', $product->image);
-        // return response()->json(['img' => public_path('/' . $product->image)]);
+        /* delñete image */
         Storage::delete('public/' . $product->image);
         $product->delete();
         return response()->json(['ok' => true, 'product' => $product]);

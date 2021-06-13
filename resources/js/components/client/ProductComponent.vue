@@ -1,33 +1,45 @@
 <template>
-  <div class="product bg-gray mb-5 shadow">
-    <h3 class="product-title">Precio</h3>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="product bg-gray mb-5 shadow">
+          <h3 class="product-title">Precio</h3>
 
-    <img
-      class="product-img img-fluid shadow"
-      src="/img/product.png"
-      alt=""
-      width="176"
-      height="88"
-    />
-    <div class="product-price">
-      <div class="product-price-header">
-        <div class="product-price-currency">$</div>
-        <div class="product-price-value">22</div>
+          <img
+            class="product-img img-fluid shadow"
+            src="/img/product.png"
+            alt=""
+            width="176"
+            height="88"
+          />
+          <div class="product-price">
+            <div class="product-price-header">
+              <div class="product-price-currency">$</div>
+              <div class="product-price-value">22</div>
+            </div>
+            <h3 class="product-title mt-5">CONDUCTIMETRO HQ14D DEDICADO</h3>
+
+            <!-- <div class="product-price-footer">per day</div> -->
+          </div>
+          <p class="product-text">
+            Special menu developed for our vegan clients who appreciate healthy
+            and plant-based food.
+          </p>
+          <a class="button button-primary" href="#">Ver detalles</a>
+        </div>
       </div>
-      <h3 class="product-title mt-5">CONDUCTIMETRO HQ14D DEDICADO</h3>
-
-      <!-- <div class="product-price-footer">per day</div> -->
     </div>
-    <p class="product-text">
-      Special menu developed for our vegan clients who appreciate healthy and
-      plant-based food.
-    </p>
-    <a class="button button-primary" href="#">Ver detalles</a>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      products: {}
+    };
+  }
+};
 </script>
 
 <style>

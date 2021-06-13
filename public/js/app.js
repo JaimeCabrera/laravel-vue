@@ -5097,7 +5097,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      products: {}
+    };
+  }
+});
 
 /***/ }),
 
@@ -6337,7 +6349,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      product: {}
+    };
+  },
+  created: function created() {
+    this.getAllProducts();
+  },
+  methods: {
+    getAllProducts: function getAllProducts() {
+      var _this = this;
+
+      this.loading = true;
+      axios.get("/api/products").then(function (res) {
+        console.log(res);
+        _this.products = res.data.products;
+        _this.loading = false;
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -11487,7 +11546,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*\r\n* Product\r\n*/\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\n}\na,\r\na:focus,\r\na:active,\r\na:hover {\r\n  text-decoration: none;\n}\na {\r\n  transition: all 0.3s;\n}\n.product {\r\n  position: relative;\r\n  width: 335px;\r\n  max-width: 100%;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  background-color: #ffffff;\r\n  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);\r\n  border-radius: 10px 100px 70px 70px;\r\n  padding: 30px 10px 40px 20px;\n}\n@media (min-width: 576px) {\n.product {\r\n    padding: 48px 10px 68px 36px;\n}\n}\n.product .button {\r\n  margin-top: 20px;\n}\n.product .link-border {\r\n  margin-top: 20px;\r\n  margin-left: 10px;\r\n  display: inline-block;\n}\nh3.product-title {\r\n  color: #000000;\r\n  font-weight: 700;\n}\n.product-img {\r\n  position: absolute;\r\n  top: -8px;\r\n  right: -12px;\r\n  margin: 0;\r\n  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);\r\n  border-radius: 10em;\r\n  max-width: 50%;\n}\n@media (min-width: 576px) {\n.product-img {\r\n    max-width: 100%;\n}\n}\n.product-price {\r\n  display: inline-block;\r\n  color: #000000;\n}\n.product-price-header {\r\n  margin-top: 23px;\r\n  display: flex;\r\n  align-items: flex-start;\n}\n.product-price-currency {\r\n  font-size: 20px;\r\n  font-weight: 500;\r\n  padding-top: 6px;\r\n  padding-right: 2px;\n}\n.product-price-value {\r\n  font-size: 80px;\r\n  font-weight: 300;\r\n  line-height: 1;\n}\n.product-price-footer {\r\n  text-transform: uppercase;\r\n  text-align: right;\r\n  line-height: 1.1;\n}\n.product-text {\r\n  margin-top: 25px;\n}\n.button-primary,\r\n.button-primary:focus {\r\n  color: #ffffff;\r\n  background-color: #71b85f;\r\n  border-color: #71b85f;\n}\n.button {\r\n  position: relative;\r\n  overflow: hidden;\r\n  display: inline-block;\r\n  padding: 22px 60px;\r\n  font-size: 14px;\r\n  line-height: 1.25;\r\n  border: 0;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  vertical-align: middle;\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n  transition: 250ms all ease-in-out;\r\n  border-radius: 10em;\r\n  box-shadow: inset 0px -4px 2px rgba(0, 0, 0, 0.25);\n}\n.button-primary,\r\n.button-primary:focus {\r\n  color: #ffffff;\r\n  background-color: #71b85f;\r\n  border-color: #71b85f;\n}\n.button-primary:hover,\r\n.button-primary:active,\r\n.button-primary.active {\r\n  color: #ffffff;\r\n  background-color: #2c343b;\r\n  border-color: #2c343b;\n}\n.product .button {\r\n  margin-top: 20px;\n}\na,\r\na:focus,\r\na:active {\r\n  color: #000000;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*\r\n* Product\r\n*/\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\n}\na,\r\na:focus,\r\na:active,\r\na:hover {\r\n  text-decoration: none;\n}\na {\r\n  transition: all 0.3s;\n}\n.product {\r\n  position: relative;\r\n  width: 335px;\r\n  max-width: 100%;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  background-color: #ffffff;\r\n  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);\r\n  border-radius: 10px 100px 70px 70px;\r\n  padding: 30px 10px 40px 20px;\n}\n@media (min-width: 576px) {\n.product {\r\n    padding: 48px 10px 68px 36px;\n}\n}\n.product .button {\r\n  margin-top: 20px;\n}\n.product .link-border {\r\n  margin-top: 20px;\r\n  margin-left: 10px;\r\n  display: inline-block;\n}\nh3.product-title {\r\n  color: #000000;\r\n  font-weight: 700;\n}\n.product-img {\r\n  position: absolute;\r\n  top: -8px;\r\n  right: -12px;\r\n  margin: 0;\r\n  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);\r\n  border-radius: 10em;\r\n  max-width: 50%;\n}\n@media (min-width: 576px) {\n.product-img {\r\n    max-width: 100%;\n}\n}\n.product-price {\r\n  display: inline-block;\r\n  color: #000000;\n}\n.product-price-header {\r\n  margin-top: 23px;\r\n  display: flex;\r\n  align-items: flex-start;\n}\n.product-price-currency {\r\n  font-size: 20px;\r\n  font-weight: 500;\r\n  padding-top: 6px;\r\n  padding-right: 2px;\n}\n.product-price-value {\r\n  font-size: 80px;\r\n  font-weight: 300;\r\n  line-height: 1;\n}\n.product-price-footer {\r\n  text-transform: uppercase;\r\n  text-align: right;\r\n  line-height: 1.1;\n}\n.product-text {\r\n  margin-top: 25px;\n}\n.button-primary,\r\n.button-primary:focus {\r\n  color: #ffffff;\r\n  background-color: #71b85f;\r\n  border-color: #71b85f;\n}\n.button {\r\n  position: relative;\r\n  overflow: hidden;\r\n  display: inline-block;\r\n  padding: 22px 60px;\r\n  font-size: 14px;\r\n  line-height: 1.25;\r\n  border: 0;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  vertical-align: middle;\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n  transition: 250ms all ease-in-out;\r\n  border-radius: 10em;\r\n  box-shadow: inset 0px -4px 2px rgba(0, 0, 0, 0.25);\n}\n.button-primary,\r\n.button-primary:focus {\r\n  color: #ffffff;\r\n  background-color: #71b85f;\r\n  border-color: #71b85f;\n}\n.button-primary:hover,\r\n.button-primary:active,\r\n.button-primary.active {\r\n  color: #ffffff;\r\n  background-color: #2c343b;\r\n  border-color: #2c343b;\n}\n.product .button {\r\n  margin-top: 20px;\n}\na,\r\na:focus,\r\na:active {\r\n  color: #000000;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -44730,34 +44789,51 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "product bg-gray mb-5 shadow" }, [
-      _c("h3", { staticClass: "product-title" }, [_vm._v("Precio")]),
-      _vm._v(" "),
-      _c("img", {
-        staticClass: "product-img img-fluid shadow",
-        attrs: { src: "/img/product.png", alt: "", width: "176", height: "88" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "product-price" }, [
-        _c("div", { staticClass: "product-price-header" }, [
-          _c("div", { staticClass: "product-price-currency" }, [_vm._v("$")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "product-price-value" }, [_vm._v("22")])
-        ]),
-        _vm._v(" "),
-        _c("h3", { staticClass: "product-title mt-5" }, [
-          _vm._v("CONDUCTIMETRO HQ14D DEDICADO")
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("div", { staticClass: "product bg-gray mb-5 shadow" }, [
+            _c("h3", { staticClass: "product-title" }, [_vm._v("Precio")]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "product-img img-fluid shadow",
+              attrs: {
+                src: "/img/product.png",
+                alt: "",
+                width: "176",
+                height: "88"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "product-price" }, [
+              _c("div", { staticClass: "product-price-header" }, [
+                _c("div", { staticClass: "product-price-currency" }, [
+                  _vm._v("$")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "product-price-value" }, [
+                  _vm._v("22")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("h3", { staticClass: "product-title mt-5" }, [
+                _vm._v("CONDUCTIMETRO HQ14D DEDICADO")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "product-text" }, [
+              _vm._v(
+                "\n          Special menu developed for our vegan clients who appreciate healthy\n          and plant-based food.\n        "
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "button button-primary", attrs: { href: "#" } },
+              [_vm._v("Ver detalles")]
+            )
+          ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "product-text" }, [
-        _vm._v(
-          "\n    Special menu developed for our vegan clients who appreciate healthy and\n    plant-based food.\n  "
-        )
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "button button-primary", attrs: { href: "#" } }, [
-        _vm._v("Ver detalles")
       ])
     ])
   }
@@ -45117,7 +45193,7 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "container" }, [_c("router-view")], 1)
+    _c("div", { staticClass: "container-fluid" }, [_c("router-view")], 1)
   ])
 }
 var staticRenderFns = [
@@ -45992,14 +46068,13 @@ var render = function() {
         staticClass: "d-sm-flex align-items-center justify-content-between mb-2"
       },
       [
-        _c("h6", { staticClass: "mb-0 text-gray-600" }, [
-          _vm._v("Modulo de productos")
-        ]),
+        _c("h6", { staticClass: "mb-0 text-gray-600" }),
         _vm._v(" "),
         _c(
           "router-link",
           {
-            staticClass: "d-none d-sm-inline-block btn btn-primary shadow",
+            staticClass:
+              "d-none d-sm-inline-block btn btn-primary btn-lg shadow",
             attrs: { to: { name: "add-product" } }
           },
           [
@@ -46013,7 +46088,7 @@ var render = function() {
     _vm._v(" "),
     _vm.loading
       ? _c("div", { staticClass: "row" }, [_vm._v("\n    Cargando...\n  ")])
-      : _c("div", { staticClass: "row" }, [
+      : _c("div", { staticClass: "row " }, [
           _c("div", { staticClass: "col-12" }, [
             _c("div", { staticClass: "card mb-4 mt-5 shadow-lg" }, [
               _vm._m(0),
@@ -46037,7 +46112,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(product.price))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(product.description))]),
+                          _c("td", [_vm._v(_vm._s(product.short_description))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(product.category.name))]),
                           _vm._v(" "),
@@ -46310,9 +46385,45 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h3", [_vm._v("Productos del client")])
+  return _c("div", { staticClass: "product bg-gray mb-5 shadow" }, [
+    _c("h3", { staticClass: "product-title" }, [
+      _vm._v(_vm._s(_vm.products.price))
+    ]),
+    _vm._v("\n  todos los productsoi\n  "),
+    _c("img", {
+      staticClass: "product-img img-fluid shadow",
+      attrs: { src: "/img/product.png", alt: "", width: "176", height: "88" }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "product-price" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("h3", { staticClass: "product-title mt-5" }, [
+        _vm._v(_vm._s(_vm.product.title))
+      ])
+    ]),
+    _vm._v(" "),
+    _c("p", { staticClass: "product-text" }, [
+      _vm._v("\n    " + _vm._s(_vm.product.description) + "\n  ")
+    ]),
+    _vm._v(" "),
+    _c("a", { staticClass: "button button-primary", attrs: { href: "#" } }, [
+      _vm._v("Ver detalles")
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "product-price-header" }, [
+      _c("div", { staticClass: "product-price-currency" }, [_vm._v("$")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "product-price-value" }, [_vm._v("22")])
+    ])
+  }
+]
 render._withStripped = true
 
 
