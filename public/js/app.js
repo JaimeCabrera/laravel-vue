@@ -44795,7 +44795,12 @@ var render = function() {
     _vm._v(" "),
     _c("img", {
       staticClass: "product-img img-fluid shadow",
-      attrs: { src: "/img/product.png", alt: "", width: "176", height: "88" }
+      attrs: {
+        src: "/storage/" + _vm.product.image,
+        alt: "",
+        width: "176",
+        height: "88"
+      }
     }),
     _vm._v(" "),
     _c("div", { staticClass: "product-price" }, [

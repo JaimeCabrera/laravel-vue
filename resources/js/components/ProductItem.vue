@@ -4,7 +4,7 @@
 
     <img
       class="product-img img-fluid shadow"
-      src="/img/product.png"
+      :src="'/storage/' + product.image"
       alt=""
       width="176"
       height="88"
