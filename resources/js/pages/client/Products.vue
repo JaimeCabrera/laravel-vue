@@ -1,39 +1,45 @@
 <template>
   <!-- mostrando el producto -->
-  <div class="product bg-gray mb-5 shadow">
-    <h3 class="product-title">{{ products.price }}</h3>
-    todos los productsoi
-    <img
-      class="product-img img-fluid shadow"
-      src="/img/product.png"
-      alt=""
-      width="176"
-      height="88"
-    />
-    <div class="product-price">
-      <div class="product-price-header">
-        <div class="product-price-currency">$</div>
-        <div class="product-price-value">22</div>
+  <div class="container-fluid mt-5 mb-5">
+    <div class="row">
+      <div class="col-sm-4 col-md-4 col-lg-2">
+        <div
+          v-for="(category, index) in categories"
+          :key="index"
+          class="list-group"
+        >
+          <button class="list-group-item list-group-item-action">
+            {{ category.name }}
+          </button>
+        </div>
       </div>
-      <h3 class="product-title mt-5">{{ product.title }}</h3>
-
-      <!-- <div class="product-price-footer">per day</div> -->
+      <div class="col-sm-8 col-md-8 col-lg-10 card bg-light shadow-sm">
+        <div class="row p-2 mt-5">
+          <div
+            v-for="(product, index) in products"
+            :key="index"
+            class="col-sm-12 col-md-12 col-lg-4"
+          >
+            <product-item :product="product"></product-item>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="product-text">
-      {{ product.description }}
-    </p>
-    <a class="button button-primary" href="#">Ver detalles</a>
   </div>
 </template>
 
 <script>
+import ProductItem from "../../components/ProductItem.vue";
 export default {
+  components: { ProductItem },
   data() {
     return {
-      product: {}
+      products: {},
+      categories: {}
     };
   },
   created() {
+    this.getAllCategories();
     this.getAllProducts();
   },
   methods: {
@@ -44,6 +50,19 @@ export default {
         .then(res => {
           console.log(res);
           this.products = res.data.products;
+          this.loading = false;
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    getAllCategories() {
+      this.loading = true;
+      axios
+        .get("/api/categories")
+        .then(res => {
+          console.log(res);
+          this.categories = res.data.categories;
           this.loading = false;
         })
         .catch(e => {
