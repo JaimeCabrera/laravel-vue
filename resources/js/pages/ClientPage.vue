@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-light p-2 sticky-top shadow"
+      class="navbar navbar-expand-lg navbar-light bg-white p-2 sticky-top shadow"
     >
       <div class="container">
         <router-link class="navbar-brand" :to="{ name: 'index' }">
@@ -65,16 +65,13 @@ export default {
   /* TODO MOSTAR SP}OLO LOGIN O ADMIN+ */
   data() {
     return {
-      auth: ""
+      auth: null
     };
   },
   created() {
     this.auth = localStorage.getItem("auth");
-    console.log("el auth esta en ", this.auth);
   },
-  mounted() {
-    console.log("pagina del cliente montada");
-  }
+  mounted() {}
 };
 </script>
 

@@ -4,9 +4,7 @@
 
 <script>
 export default {
-  mounted() {
-    console.log("component princiapl montado");
-  }
+  mounted() {}
 };
 </script>
 

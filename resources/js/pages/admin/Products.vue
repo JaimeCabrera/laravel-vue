@@ -18,7 +18,7 @@
       </router-link>
     </div> -->
     <div v-if="loading" class="row">
-      Cargando...
+      <loader></loader>
     </div>
     <div v-else class="row ">
       <div class="col-12">
@@ -80,8 +80,10 @@
 </template>
 
 <script>
+import Loader from "../../components/Loader.vue";
 const token = localStorage.getItem("token");
 export default {
+  components: { Loader },
   data() {
     return {
       products: [],

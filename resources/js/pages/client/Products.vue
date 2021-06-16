@@ -1,21 +1,27 @@
 <template>
   <!-- mostrando el producto -->
-  <div class="container-fluid mt-5 mb-5">
+  <div class="container-fluid mt-5 mb-5 ">
     <div class="row">
       <div class="col-sm-4 col-md-4 col-lg-2">
-        <div
-          v-for="(category, index) in categories"
-          :key="index"
-          class="list-group"
-        >
-          <button class="list-group-item list-group-item-action">
+        <div class="btn-group-vertical shadow-sm">
+          <button
+            v-for="(category, index) in categories"
+            :key="index"
+            @click="productsByCategory(category.id), (selected = index)"
+            class="list-group-item list-group-item-action"
+            v-bind:class="{ activo: isSelected(index) }"
+          >
             {{ category.name }}
           </button>
         </div>
       </div>
-      <div class="col-sm-8 col-md-8 col-lg-10 card bg-light shadow-sm">
-        <div class="row p-2 mt-5">
+      <div class="col-sm-8 col-md-8 col-lg-10 bg-products ">
+        <div class="row p-2 mt-5 ">
+          <div v-if="loading">
+            <loader></loader>
+          </div>
           <div
+            v-else
             v-for="(product, index) in products"
             :key="index"
             class="col-sm-12 col-md-12 col-lg-4"
@@ -29,26 +35,41 @@
 </template>
 
 <script>
+import Loader from "../../components/Loader.vue";
 import ProductItem from "../../components/ProductItem.vue";
 export default {
-  components: { ProductItem },
+  components: { ProductItem, Loader },
   data() {
     return {
       products: {},
-      categories: {}
+      categories: {},
+      activo: false,
+      selected: 0,
+      loading: true,
+      category_id: null
     };
   },
-  created() {
-    this.getAllCategories();
-    this.getAllProducts();
-  },
   methods: {
-    getAllProducts() {
+    getAllCategories() {
       this.loading = true;
       axios
-        .get("/api/products")
+        .get("/api/categories")
         .then(res => {
-          console.log(res);
+          this.categories = res.data.categories;
+          // console.log(this.categories[0].id);
+          this.category_id = this.categories[0].id;
+          this.getCategoryProducts(this.category_id);
+          this.loading = false;
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+    getCategoryProducts(id) {
+      this.loading = true;
+      axios
+        .get("/api/products-category", { params: { id } })
+        .then(res => {
           this.products = res.data.products;
           this.loading = false;
         })
@@ -56,21 +77,32 @@ export default {
           console.log(e);
         });
     },
-    getAllCategories() {
-      this.loading = true;
-      axios
-        .get("/api/categories")
-        .then(res => {
-          console.log(res);
-          this.categories = res.data.categories;
-          this.loading = false;
-        })
-        .catch(e => {
-          console.log(e);
-        });
+
+    isSelected(i) {
+      return i === this.selected;
+    },
+    productsByCategory(category_id) {
+      this.category_id = category_id;
+      this.getCategoryProducts(this.category_id);
+      // this.active = true;
     }
-  }
+  },
+  created() {
+    this.getAllCategories();
+  },
+  mounted() {}
 };
 </script>
 
-<style></style>
+<style scoped>
+/* $primary: #71b85f;
+$secondary: #2c343b; */
+.activo {
+  border-left: 3px solid #71b85f !important;
+  color: #71b85f !important;
+  font-weight: 500 !important;
+}
+.list-group-item:hover {
+  color: #71b85f !important;
+}
+</style>
