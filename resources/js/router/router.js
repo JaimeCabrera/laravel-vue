@@ -14,7 +14,7 @@ import AddProduct from "../pages/admin/AddProduct";
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: "history",
+  mode: "hash",
   routes: [
     /* client routes */
     {
