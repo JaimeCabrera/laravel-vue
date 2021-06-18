@@ -1,5 +1,5 @@
 <template>
-  <section class="container-fluid mb-5 mt-5 ">
+  <section class="container-fluid  py-5 bg-white ">
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
         <h2 class="subtitle">Contactenos</h2>

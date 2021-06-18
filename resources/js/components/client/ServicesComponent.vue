@@ -1,5 +1,5 @@
 <template>
-  <section class="container mt-5 mx-auto ">
+  <section class="container-fluid py-5 mx-auto bg-white ">
     <div class="d-flex flex-column mb-5">
       <div class="col-3 d-flex justify-content-center services mx-auto">
         <h2 class="subtitle">Servicios</h2>
