@@ -5531,6 +5531,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   /* TODO MOSTAR SP}OLO LOGIN O ADMIN+ */
   data: function data() {
@@ -6497,6 +6499,7 @@ __webpack_require__.r(__webpack_exports__);
       return i === this.selected;
     },
     productsByCategory: function productsByCategory(category_id) {
+      this.$router.push("/products/category/".concat(category_id));
       this.category_id = category_id;
       this.getCategoryProducts(this.category_id); // this.active = true;
     }
@@ -6637,7 +6640,7 @@ vue__WEBPACK_IMPORTED_MODULE_8__.default.use(vue_router__WEBPACK_IMPORTED_MODULE
       path: "login",
       component: _pages_client_Login__WEBPACK_IMPORTED_MODULE_2__.default
     }, {
-      path: "/products",
+      path: "/products/category/:id",
       component: _pages_client_Products__WEBPACK_IMPORTED_MODULE_3__.default,
       name: "client-products"
     }]
@@ -11847,7 +11850,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* $primary: #71b85f;\r\n$secondary: #2c343b; */\n.activo[data-v-11047622] {\r\n  border-left: 3px solid #71b85f !important;\r\n  color: #71b85f !important;\r\n  font-weight: 500 !important;\n}\n.list-group-item[data-v-11047622]:hover {\r\n  color: #71b85f !important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* $primary: #71b85f;\r\n$secondary: #2c343b; */\n.activo[data-v-11047622] {\r\n  border-left: 3px solid #71b85f !important;\r\n  color: #71b85f !important;\r\n  font-weight: 500 !important;\n}\n.list-group-item[data-v-11047622]:hover {\r\n  color: #71b85f !important;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -45736,7 +45739,12 @@ var render = function() {
                           "router-link",
                           {
                             staticClass: "nav-link",
-                            attrs: { to: { name: "client-products" } }
+                            attrs: {
+                              to: {
+                                name: "client-products",
+                                params: { id: "1" }
+                              }
+                            }
                           },
                           [_vm._v("Productos")]
                         )

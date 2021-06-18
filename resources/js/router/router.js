@@ -31,7 +31,7 @@ export default new VueRouter({
           component: LoginPage
         },
         {
-          path: "/products",
+          path: "/products/category/:id",
           component: ClientProducts,
           name: "client-products"
         }

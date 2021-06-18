@@ -82,6 +82,7 @@ export default {
       return i === this.selected;
     },
     productsByCategory(category_id) {
+      this.$router.push(`/products/category/${category_id}`);
       this.category_id = category_id;
       this.getCategoryProducts(this.category_id);
       // this.active = true;

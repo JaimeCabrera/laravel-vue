@@ -29,7 +29,9 @@
               >
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" :to="{ name: 'client-products' }"
+              <router-link
+                class="nav-link"
+                :to="{ name: 'client-products', params: { id: '1' } }"
                 >Productos</router-link
               >
             </li>
