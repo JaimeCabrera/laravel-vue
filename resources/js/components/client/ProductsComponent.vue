@@ -29,9 +29,9 @@
 
 <script>
 import ProductItem from "../ProductItem.vue";
-import ProductComponent from "./ProductComponent.vue";
+// import ProductComponent from "./ProductComponent.vue";
 export default {
-  components: { ProductComponent, ProductItem },
+  components: { ProductItem },
   data() {
     return {
       products: {}
