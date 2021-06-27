@@ -6274,7 +6274,8 @@ var token = localStorage.getItem("token");
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (res) {
-        _this2.products = res.data.products;
+        console.log(res);
+        _this2.products = res.data.products.data;
         _this2.loading = false;
       })["catch"](function (e) {
         console.log(e);

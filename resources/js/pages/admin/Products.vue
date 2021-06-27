@@ -127,7 +127,8 @@ export default {
       axios
         .get("/api/products", { Headers: { Authorization: `Bearer ${token}` } })
         .then(res => {
-          this.products = res.data.products;
+          console.log(res);
+          this.products = res.data.products.data;
           this.loading = false;
         })
         .catch(e => {
