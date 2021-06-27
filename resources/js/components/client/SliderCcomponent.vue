@@ -4,10 +4,11 @@
       <div class="container">
         <h1 class="page-title mt-2">SOLUCIONES AMBIENTALES</h1>
         <p class="lead mt-2 subtitle font-weight-bold">
-          This is a modified jumbotron that occupies the entire horizontal space
-          of its parent.
+          EQUIPOS E INSUMOS PARA LABORATORIO.
         </p>
-        <a href="" class="btn btn-rounded rounded btn-lg mt-3 text-white"
+        <a
+          href=""
+          class="btn btn-rounded btn-primary rounded btn-lg mt-3 text-white"
           >VER PRODUCTOS</a
         >
       </div>
@@ -22,11 +23,9 @@ export default {};
 <style>
 .page-title {
   font-weight: 700;
-  color: #6caa5b;
+  color: #2665d6;
 }
-.subtitle {
-  color: #4c7c3f;
-}
+
 .slider {
   background-size: cover;
   background-image: url("/img/fondo_3.jpg");
@@ -34,12 +33,12 @@ export default {};
   background-attachment: fixed;
 }
 .btn-rounded {
-  background-color: #5da349;
+  background-color: #2665d6;
   border-radius: 25px 25px 25px 24px !important;
 }
 .btn-rounded:hover {
   transition: 0.9 ease;
-  background-color: #486e3e;
+  background-color: #2453aa;
 }
 .jumbotron {
   height: 60vh !important;

@@ -25,7 +25,11 @@
             Special menu developed for our vegan clients who appreciate healthy
             and plant-based food.
           </p>
-          <a class="button button-primary" href="#">Ver detalles</a>
+          <router-link
+            class="button btn-primary"
+            :to="{ name: 'client-product-details', params: { id: '1' } }"
+            >Ver detalles</router-link
+          >
         </div>
       </div>
     </div>
@@ -142,12 +146,12 @@ h3.product-title {
 .product-text {
   margin-top: 25px;
 }
-.button-primary,
+/* .button-primary,
 .button-primary:focus {
   color: #ffffff;
   background-color: #71b85f;
   border-color: #71b85f;
-}
+} */
 .button {
   position: relative;
   overflow: hidden;
@@ -168,17 +172,17 @@ h3.product-title {
   border-radius: 10em;
   box-shadow: inset 0px -4px 2px rgba(0, 0, 0, 0.25);
 }
-.button-primary,
+/* .button-primary,
 .button-primary:focus {
   color: #ffffff;
   background-color: #71b85f;
   border-color: #71b85f;
-}
+} */
 
-.button-primary:hover,
-.button-primary:active,
-.button-primary.active {
-  color: #ffffff;
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active {
+  color: #7c7a7a;
   background-color: #2c343b;
   border-color: #2c343b;
 }

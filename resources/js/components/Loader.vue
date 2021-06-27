@@ -14,16 +14,16 @@ export default {};
   width: 11em;
   height: 11em;
   border-radius: 50%;
-  background: #2ac649;
-  background: -moz-linear-gradient(left, #2ac649 10%, rgba(42, 198, 73, 0) 42%);
+  background: #2665d6;
+  background: -moz-linear-gradient(left, #2665d6 10%, rgba(42, 198, 73, 0) 42%);
   background: -webkit-linear-gradient(
     left,
-    #2ac649 10%,
+    #2665d6 10%,
     rgba(42, 198, 73, 0) 42%
   );
-  background: -o-linear-gradient(left, #2ac649 10%, rgba(42, 198, 73, 0) 42%);
-  background: -ms-linear-gradient(left, #2ac649 10%, rgba(42, 198, 73, 0) 42%);
-  background: linear-gradient(to right, #2ac649 10%, rgba(42, 198, 73, 0) 42%);
+  background: -o-linear-gradient(left, #2665d6 10%, rgba(42, 198, 73, 0) 42%);
+  background: -ms-linear-gradient(left, #2665d6 10%, rgba(42, 198, 73, 0) 42%);
+  background: linear-gradient(to right, #2665d6 10%, rgba(42, 198, 73, 0) 42%);
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -34,7 +34,7 @@ export default {};
 .loader:before {
   width: 50%;
   height: 50%;
-  background: #2ac649;
+  background: #2665d6;
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;

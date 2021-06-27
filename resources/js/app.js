@@ -13,7 +13,7 @@ require("./bootstrap");
 // );
 
 const app = new Vue({
-    router,
-    el: "#app",
-    components: { App }
+  router,
+  el: "#app",
+  components: { App }
 });

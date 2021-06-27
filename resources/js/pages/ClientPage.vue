@@ -1,8 +1,6 @@
 <template>
   <div class="">
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white p-1 sticky-top shadow"
-    >
+    <nav class="navbar navbar-expand-lg navbar-light bg-white p-1 shadow">
       <div class="container">
         <router-link class="navbar-brand" :to="{ name: 'index' }">
           <img src="/img/logo.png" alt=""
@@ -81,16 +79,16 @@ export default {
 .nav-link {
   font-weight: 600;
   font-size: 16px;
-  color: #59884e !important; /**#71b85f */
+  color: #5086e9 !important;
 }
 .nav-link:hover {
   transition: 0.5s ease;
-  color: #71b85f !important;
+  color: #31528f !important;
 
   display: block;
 }
 .nav-item .item-menu-text:hover {
-  color: #508144;
+  color: #2665d6;
 }
 .navbar-light {
   background-color: rgb(255, 250, 246);

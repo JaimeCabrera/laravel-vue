@@ -27,6 +27,7 @@ export default {
 
 <style>
 .bg-green {
-  background-color: #71b85f;
+  /* background-color:  #71b85f; */
+  background-color: #2665d6;
 }
 </style>

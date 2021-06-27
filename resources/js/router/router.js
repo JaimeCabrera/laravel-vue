@@ -11,6 +11,8 @@ import AdminPage from "../pages/AdminPage.vue";
 import Products from "../pages/admin/Products";
 import Categories from "../pages/admin/Categories";
 import AddProduct from "../pages/admin/AddProduct";
+import ProductDetails from "../pages/client/ProductDetails";
+
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -34,6 +36,11 @@ export default new VueRouter({
           path: "/products/category/:id",
           component: ClientProducts,
           name: "client-products"
+        },
+        {
+          path: "/products/:id/details",
+          component: ProductDetails,
+          name: "client-product-details"
         }
       ]
     },

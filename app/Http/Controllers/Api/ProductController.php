@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +16,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:sanctum')->except('index');
+        $this->middleware('auth:sanctum')->except('index', 'show');
     }
     /**
      * Display a listing of the resource.
@@ -24,7 +25,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('category')->orderBy('id', 'desc')->get();
+        $products = Product::with('category')->orderBy('id', 'desc')->paginate(4);
         return response()->json(['ok' => true, 'products' => $products]);
     }
 
@@ -81,7 +82,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        // $product = $product->with('category')->get();
+        $category = $product->category()->get();
+        return response()->json(['product' => $product, 'category' => $category]);
     }
 
     /**
