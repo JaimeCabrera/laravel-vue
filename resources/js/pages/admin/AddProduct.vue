@@ -214,11 +214,6 @@ export default {
         });
     },
     addNewProduct() {
-      // let params = {
-      //   ...this.product,
-      //   category_id: this.selected
-      // };
-
       const headers = {
         "Content-Type": "multipart/form-data",
         Authorization: `Bearer ${token}`
