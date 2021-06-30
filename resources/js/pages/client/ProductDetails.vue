@@ -15,14 +15,14 @@
         </div>
       </div>
       <div class="row mt-5">
-        <div class="col-5">
+        <div class="col-md-5 col-sm-12">
           <img
             :src="'/storage/' + product.image"
             alt="img-product"
             class="img-product img-fluid"
           />
         </div>
-        <div class="col-7">
+        <div class="col-md-7 col-sm-12">
           <p class="text-black-50 mt-3 precio">Precio: ${{ product.price }}</p>
           <span class="b">Categoria {{ category.name }}</span>
           <h4>Descripcion</h4>

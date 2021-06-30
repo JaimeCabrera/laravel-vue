@@ -47538,7 +47538,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row mt-5" }, [
-        _c("div", { staticClass: "col-5" }, [
+        _c("div", { staticClass: "col-md-5 col-sm-12" }, [
           _c("img", {
             staticClass: "img-product img-fluid",
             attrs: { src: "/storage/" + _vm.product.image, alt: "img-product" }
@@ -47547,7 +47547,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-7" },
+          { staticClass: "col-md-7 col-sm-12" },
           [
             _c("p", { staticClass: "text-black-50 mt-3 precio" }, [
               _vm._v("Precio: $" + _vm._s(_vm.product.price))
