@@ -20,7 +20,7 @@ export default {
     ContactComponent
   },
   mounted() {
-    console.log("items del index");
+    // console.log("items del index");
   }
 };
 </script>

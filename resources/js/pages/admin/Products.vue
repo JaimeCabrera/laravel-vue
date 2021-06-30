@@ -29,7 +29,7 @@
             </h4>
           </div>
           <div class="card-body">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover table-responsive">
               <thead class="bg-gray-50 text-dark">
                 <tr class="text-center">
                   <th>id</th>
@@ -43,7 +43,7 @@
               </thead>
               <tbody>
                 <tr v-for="(product, index) in products" :key="index">
-                  <td scope="row">{{ index + 1 }}</td>
+                  <td>{{ index + 1 }}</td>
                   <td>{{ product.name }}</td>
                   <td>{{ product.price }}</td>
                   <td>{{ product.short_description }}</td>
@@ -55,7 +55,7 @@
                       alt="imagen del producto"
                     />
                   </td>
-                  <td>
+                  <td class="d-flex flex-row justify-content-between">
                     <button
                       class="btn btn-sm btn-outline-success mx-2 "
                       @click="edit(product.id)"

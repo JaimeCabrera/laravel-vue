@@ -1,6 +1,10 @@
 <template>
   <div class="">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white p-1 shadow">
+    <nav
+      class="navbar navbar-expand-lg p-1  shadow-sm"
+      :class="clase"
+      v-on:scroll.passive="handleScroll"
+    >
       <div class="container">
         <router-link class="navbar-brand" :to="{ name: 'index' }">
           <img src="/img/logo.png" alt=""
@@ -57,29 +61,48 @@
       </div>
     </nav>
     <router-view></router-view>
+    <btn-float></btn-float>
   </div>
 </template>
 
 <script>
+import BtnFloat from "../components/BtnFloat.vue";
 export default {
+  components: { BtnFloat },
   /* TODO MOSTAR SP}OLO LOGIN O ADMIN+ */
   data() {
     return {
-      auth: null
+      auth: null,
+      clase: "navbar-light bg-light bg-white"
     };
   },
   created() {
+    window.addEventListener("scroll", this.handleScroll);
     this.auth = localStorage.getItem("auth");
   },
-  mounted() {}
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll(e) {
+      console.log(window.scrollY);
+      if (window.scrollY > 150) {
+        console.log("cambiar clase");
+        this.clase = "bg-white-scrolled sticky-top";
+      } else {
+        this.clase = "navbar-light bg-light bg-white";
+      }
+      // Any code to be executed when the window is scrolled
+    }
+  }
 };
 </script>
 
-<style>
+<style scoped>
 .nav-link {
   font-weight: 600;
   font-size: 16px;
-  color: #5086e9 !important;
+  color: #31528f !important;
 }
 .nav-link:hover {
   transition: 0.5s ease;
@@ -92,5 +115,21 @@ export default {
 }
 .navbar-light {
   background-color: rgb(255, 250, 246);
+}
+
+body {
+  min-height: 200vh;
+}
+.bg-white {
+  transition: 0.8s ease-in-out;
+  background: transparent;
+}
+.bg-white-scrolled {
+  background: #2665d6;
+}
+.bg-white-scrolled .nav-link {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fbfdff !important;
 }
 </style>
