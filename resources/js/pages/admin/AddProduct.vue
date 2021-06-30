@@ -230,8 +230,7 @@ export default {
       axios
         .post("/api/products", data, {
           headers: {
-            Authorization: "Bearer " + `${token}`,
-            "Content-Type": "multipart/form-data"
+            Authorization: `Bearer ${token}`
           }
         })
         .then(res => {

@@ -5767,8 +5767,7 @@ var token = localStorage.getItem("token");
       data.append("image", this.product.image);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/products", data, {
         headers: {
-          Authorization: "Bearer " + "".concat(token),
-          "Content-Type": "multipart/form-data"
+          Authorization: "Bearer ".concat(token)
         }
       }).then(function (res) {
         console.log(res);
