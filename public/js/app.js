@@ -4998,6 +4998,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -11936,7 +11940,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\r\n/* float button */\n.btn-float[data-v-74f9b2cb] {\r\n  background-color: #9da7a1;\r\n  color: white;\r\n  font-weight: 500;\r\n  border-radius: 25px;\r\n  position: fixed;\r\n  padding: 8px;\r\n  bottom: 20px;\r\n  right: 20px;\r\n  cursor: pointer;\r\n  transition: 0.4s ease-in;\n}\n.btn-float[data-v-74f9b2cb]:hover {\r\n  background-color: #71b85f;\r\n  color: #ebebeb !important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* float button */\n.btn-float[data-v-74f9b2cb] {\r\n  background-color: #9da7a1;\r\n  color: white;\r\n  font-weight: 500;\r\n  border-radius: 25px;\r\n  position: fixed;\r\n  padding: 8px;\r\n  bottom: 20px;\r\n  right: 20px;\r\n  cursor: pointer;\r\n  transition: 0.4s ease-in;\n}\n.btn-float[data-v-74f9b2cb]:hover {\r\n  background-color: #71b85f;\r\n  color: #ebebeb !important;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -45555,10 +45559,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "btn-float d-flex justify-content-around" }, [
-      _c("i", { staticClass: "fab fa-whatsapp fa-2x mx-2" }),
-      _vm._v("\n  ¿Cómo puedo, ayudarte?\n")
-    ])
+    return _c(
+      "a",
+      {
+        staticClass: "btn-float d-flex justify-content-around",
+        attrs: {
+          href:
+            "https://web.whatsapp.com/send?phone=593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda.",
+          target: "_blank"
+        }
+      },
+      [
+        _c("i", { staticClass: "fab fa-whatsapp fa-2x mx-2" }),
+        _vm._v("\n  ¿Cómo puedo, ayudarte?\n")
+      ]
+    )
   }
 ]
 render._withStripped = true
