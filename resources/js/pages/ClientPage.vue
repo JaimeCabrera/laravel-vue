@@ -85,9 +85,7 @@ export default {
   },
   methods: {
     handleScroll(e) {
-      console.log(window.scrollY);
       if (window.scrollY > 150) {
-        console.log("cambiar clase");
         this.clase = "bg-white-scrolled sticky-top";
       } else {
         this.clase = "navbar-light bg-light bg-white";

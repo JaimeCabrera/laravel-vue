@@ -1,5 +1,15 @@
 <template>
-  <section class="container-fluid  py-5 bg-white ">
+  <section
+    class="container-fluid   py-5 bg-white "
+    data-aos="zoom-in"
+    data-aos-anchor-placement="center"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+  >
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
         <h2 class="subtitle">Contactenos</h2>

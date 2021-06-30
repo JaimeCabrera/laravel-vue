@@ -1,8 +1,11 @@
 <template>
   <div>
     <slider-ccomponent></slider-ccomponent>
+
     <services-component></services-component>
+
     <products-component></products-component>
+
     <contact-component></contact-component>
   </div>
 </template>

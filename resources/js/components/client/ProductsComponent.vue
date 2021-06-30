@@ -2,7 +2,17 @@
   <div>
     <div class="container-fluid pt-5 mt-0">
       <div class="row">
-        <div class="col-12 d-flex">
+        <div
+          class="col-12 d-flex"
+          data-aos="zoom-in-down"
+          data-aos-anchor-placement="center"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="false"
+        >
           <h2 class="subtitle-p mb-5 mx-auto">Productos</h2>
         </div>
       </div>
@@ -44,7 +54,7 @@ export default {
     getProducts() {
       axios.get("api/products").then(res => {
         this.products = res.data.products.data;
-        console.log(res.data);
+        // console.log(res.data);
       });
     }
   }

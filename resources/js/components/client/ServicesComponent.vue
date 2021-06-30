@@ -1,7 +1,16 @@
 <template>
   <section class="container-fluid py-5 mx-auto bg-white ">
     <div class="container">
-      <div class="d-flex flex-column mb-5">
+      <div
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+        data-aos-anchor-placement="center"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
         <div class="col-3 d-flex justify-content-center services mx-auto">
           <h2 class="subtitle">Servicios</h2>
         </div>
@@ -14,7 +23,17 @@
         </div>
       </div>
 
-      <div class="row mb-5">
+      <div
+        class="row mb-5"
+        data-aos="fade-up"
+        data-aos-anchor-placement="center"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
         <div class="col-md-4 mb-4">
           <div class="card-service card shadow">
             <div class="card-body">

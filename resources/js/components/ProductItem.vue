@@ -1,5 +1,11 @@
 <template>
-  <div class="product bg-gray mb-5 shadow">
+  <div
+    class="product bg-gray mb-5 shadow"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine"
+  >
     <h3 class="product-title">Precio</h3>
 
     <img
