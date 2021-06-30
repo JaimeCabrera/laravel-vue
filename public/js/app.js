@@ -6208,7 +6208,7 @@ var token = localStorage.getItem("token");
 
       this.loading = true;
       axios.get("/api/products", {
-        Headers: {
+        headers: {
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (res) {
@@ -6223,7 +6223,7 @@ var token = localStorage.getItem("token");
       var _this3 = this;
 
       axios["delete"]("/api/products/".concat(id), {
-        Headers: {
+        headers: {
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (res) {

@@ -125,7 +125,11 @@ export default {
     getAllProducts() {
       this.loading = true;
       axios
-        .get("/api/products", { Headers: { Authorization: `Bearer ${token}` } })
+        .get("/api/products", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
         .then(res => {
           console.log(res);
           this.products = res.data.products.data;
@@ -138,7 +142,9 @@ export default {
     deleteProduct(id) {
       axios
         .delete(`/api/products/${id}`, {
-          Headers: { Authorization: `Bearer ${token}` }
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         })
         .then(res => {
           if (res.data.ok) {
