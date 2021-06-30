@@ -214,11 +214,11 @@ export default {
         });
     },
     addNewProduct() {
-      const headers = {
-        "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${token}`,
-        _token: "{{ csrf_token() }}"
-      };
+      // const headers = {
+      //   "Content-Type": "multipart/form-data",
+      //   Authorization: `Bearer ${token}`,
+      //   _token: "{{ csrf_token() }}"
+      // };
 
       let data = new FormData();
       data.append("name", this.product.name);
@@ -228,7 +228,12 @@ export default {
       data.append("price", this.product.price);
       data.append("image", this.product.image);
       axios
-        .post("/api/products", data, { headers: headers })
+        .post("/api/products", data, {
+          headers: {
+            Authorization: "Bearer " + `${token}`,
+            "Content-Type": "multipart/form-data"
+          }
+        })
         .then(res => {
           console.log(res);
           if (res.data.ok) {

@@ -5753,11 +5753,11 @@ var token = localStorage.getItem("token");
     addNewProduct: function addNewProduct() {
       var _this2 = this;
 
-      var headers = {
-        "Content-Type": "multipart/form-data",
-        Authorization: "Bearer ".concat(token),
-        _token: "{{ csrf_token() }}"
-      };
+      // const headers = {
+      //   "Content-Type": "multipart/form-data",
+      //   Authorization: `Bearer ${token}`,
+      //   _token: "{{ csrf_token() }}"
+      // };
       var data = new FormData();
       data.append("name", this.product.name);
       data.append("short_description", this.product.short_description);
@@ -5766,7 +5766,10 @@ var token = localStorage.getItem("token");
       data.append("price", this.product.price);
       data.append("image", this.product.image);
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/products", data, {
-        headers: headers
+        headers: {
+          Authorization: "Bearer " + "".concat(token),
+          "Content-Type": "multipart/form-data"
+        }
       }).then(function (res) {
         console.log(res);
 
