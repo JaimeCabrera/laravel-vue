@@ -6,10 +6,10 @@
         <p class="lead mt-2 subtitle font-weight-bold">
           EQUIPOS E INSUMOS PARA LABORATORIO.
         </p>
-        <a
-          href=""
+        <router-link
+          :to="{ name: 'client-products' }"
           class="btn btn-rounded btn-primary rounded btn-lg mt-3 text-white"
-          >VER PRODUCTOS</a
+          >VER PRODUCTOS</router-link
         >
       </div>
     </div>

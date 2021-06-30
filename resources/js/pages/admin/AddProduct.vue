@@ -79,6 +79,7 @@
                       name=""
                       v-model="product.short_description"
                       rows="5"
+                      maxlength="255"
                     ></textarea>
                   </div>
                 </div>

@@ -40,12 +40,12 @@
 export default {
   data() {
     return {
-      user: { email: "email@email.com", password: "12345678" },
+      user: { email: "", password: "" },
       error: ""
     };
   },
   mounted() {
-    console.log("compopnent login montado");
+    // console.log("compopnent login montado");
   },
   methods: {
     handleLogin() {
