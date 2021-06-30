@@ -5863,8 +5863,8 @@ var token = localStorage.getItem("token");
   },
   methods: {
     onImageChange: function onImageChange(e) {
-      this.product.image = e.target.files[0];
-      console.log(this.product.image);
+      this.product.image = e.target.files[0]; // console.log(this.product.image);
+
       var reader = new FileReader();
       reader.addEventListener("load", function () {
         this.showPreview = true;
@@ -6612,9 +6612,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/products/".concat(id)).then(function (res) {
         _this.product = res.data.product;
-        _this.category = res.data.category;
-      })["catch"](function (err) {
-        console.log(err);
+        _this.category = res.data.category[0];
+      })["catch"](function (err) {// console.log(err);
       });
     }
   }
@@ -47557,7 +47556,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "b" }, [
-              _vm._v("Categoria " + _vm._s(_vm.category[0].name))
+              _vm._v("Categoria " + _vm._s(_vm.category.name))
             ]),
             _vm._v(" "),
             _c("h4", [_vm._v("Descripcion")]),
@@ -47571,7 +47570,8 @@ var render = function() {
             _c(
               "a",
               {
-                staticClass: "btn btn-primary btn-lg mb-5 text-uppercase",
+                staticClass:
+                  "btn btn-outline-primary btn-lg mb-5 text-uppercase",
                 attrs: { href: "" }
               },
               [_vm._v("Solicitar Cotización")]

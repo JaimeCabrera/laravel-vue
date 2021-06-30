@@ -24,12 +24,12 @@
         </div>
         <div class="col-7">
           <p class="text-black-50 mt-3 precio">Precio: ${{ product.price }}</p>
-          <span class="b">Categoria {{ category[0].name }}</span>
+          <span class="b">Categoria {{ category.name }}</span>
           <h4>Descripcion</h4>
           <p class=" descripcion-producto">
             {{ product.description }}
           </p>
-          <a class="btn btn-primary btn-lg mb-5 text-uppercase" href=""
+          <a class="btn btn-outline-primary btn-lg mb-5 text-uppercase" href=""
             >Solicitar Cotización</a
           >
 
@@ -86,10 +86,10 @@ export default {
         .get(`/api/products/${id}`)
         .then(res => {
           this.product = res.data.product;
-          this.category = res.data.category;
+          this.category = res.data.category[0];
         })
         .catch(err => {
-          console.log(err);
+          // console.log(err);
         });
     }
   }

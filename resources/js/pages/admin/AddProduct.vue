@@ -181,7 +181,7 @@ export default {
   methods: {
     onImageChange(e) {
       this.product.image = e.target.files[0];
-      console.log(this.product.image);
+      // console.log(this.product.image);
       let reader = new FileReader();
       reader.addEventListener(
         "load",
