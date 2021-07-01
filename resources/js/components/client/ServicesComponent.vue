@@ -24,7 +24,7 @@
       </div>
 
       <div
-        class="row mb-5"
+        class="row mb-5 mt-5"
         data-aos="fade-up"
         data-aos-anchor-placement="center"
         data-aos-offset="200"
@@ -37,8 +37,8 @@
         <div class="col-md-4 mb-4">
           <div class="card-service card shadow">
             <div class="card-body">
-              <img src="/img/ordenador_2.png" class="img-fluid" alt="" />
-              <h4 class="service-title mt-3 text-center">
+              <img src="/img/laboratorio_1.png" class="img-fluid" alt="" />
+              <h4 class="service-title mt-5 text-center">
                 EQUIPOS DE LABORATORIO
               </h4>
               <p class="card-text">
@@ -53,7 +53,7 @@
           <div class="card-service card shadow">
             <div class="card-body">
               <img src="/img/quimica.png" class="img-fluid" alt="" />
-              <h4 class="card-title service-title mt-3">REACTIVOS QUIMICOS</h4>
+              <h4 class="card-title service-title mt-5">REACTIVOS QUIMICOS</h4>
               <p class="card-text">
                 Disponemos de Reactivos analíticos, productos para fines
                 bioquímicos, biología molecular, reactivos para análisis de
@@ -65,9 +65,9 @@
         <div class="col-md-4 mb-4">
           <div class="card-service card shadow">
             <div class="card-body">
-              <img src="/img/expediente.png" class="img-fluid" alt="" />
-              <h4 class="service-title mt-3">ENVIOS A TODO EL PAIS</h4>
-              <p class="card-text">
+              <img src="/img/paquete.png" class="img-fluid" alt="" />
+              <h4 class="service-title mt-5">ENVIOS A TODO EL PAIS</h4>
+              <p class="card-text pt-4">
                 Realizamos envíos de todos nuestros productos a nivel nacional,
                 tomando en cuenta todos los estándares de calidad .
               </p>
@@ -89,7 +89,7 @@ export default {};
   border-bottom: 2px solid #2665d6;
 }
 .card-text {
-  font-weight: 600;
+  font-weight: 300;
   color: #566573;
 }
 
@@ -99,17 +99,17 @@ export default {};
   border: 1px solid #a3c1da;
 }
 .card-service:hover {
-  cursor: pointer;
-  background-color: #7ba2eb;
+  /* cursor: pointer;
+  background-color: #7ba2eb; */
   color: aliceblue;
 }
 .service-title {
   font-size: 16px;
   font-weight: 700;
-  color: #2665d6;
+  color: #154360;
 }
 .services-text {
-  font-weight: 600;
+  font-weight: 500;
   color: #808b96;
   font-size: 1.1rem;
 }

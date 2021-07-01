@@ -7,8 +7,19 @@
     >
       <div class="container">
         <router-link class="navbar-brand" :to="{ name: 'index' }">
-          <img src="/img/logo.png" alt=""
-        /></router-link>
+          <img
+            :src="'/img/' + logo"
+            class="img"
+            width="80"
+            height="60"
+            alt="logo soluciones ambientales"
+            Soluciones
+            Ambientales
+          />
+          <span class="text-uppercase" :class="text_name"
+            >Soluciones Ambientales</span
+          >
+        </router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -24,7 +35,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <router-link
-                class="nav-link active"
+                class="nav-link is-active mx-2"
                 aria-current="page"
                 :to="{ name: 'index' }"
                 >Inicio</router-link
@@ -32,8 +43,11 @@
             </li>
             <li class="nav-item">
               <router-link
-                class="nav-link"
-                :to="{ name: 'client-products', params: { id: '1' } }"
+                class="nav-link mx-2"
+                :to="{
+                  name: 'client-products',
+                  params: { id: '1' }
+                }"
                 >Productos</router-link
               >
             </li>
@@ -45,7 +59,7 @@
       </div>
       <div class="form-inline my-2 my-lg-0">
         <div class="d-flex">
-          <ul class="nav">
+          <!-- <ul class="nav">
             <li v-if="auth" class="nav-item">
               <router-link class="nav-link" aria-current="page" to="/login"
                 ><i class="fas fa-sign-in-alt mx-1"></i>Login</router-link
@@ -56,7 +70,7 @@
                 >Admin</router-link
               >
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </nav>
@@ -73,7 +87,9 @@ export default {
   data() {
     return {
       auth: null,
-      clase: "navbar-light bg-light bg-white"
+      clase: "navbar-light bg-light bg-white",
+      text_name: "text-primary-brand",
+      logo: "logo_primary.svg"
     };
   },
   created() {
@@ -87,8 +103,12 @@ export default {
     handleScroll(e) {
       if (window.scrollY > 150) {
         this.clase = "bg-white-scrolled sticky-top";
+        this.text_name = "text-white";
+        this.logo = "logo_secondary.svg";
       } else {
         this.clase = "navbar-light bg-light bg-white";
+        this.logo = "logo_primary.svg";
+        this.text_name = "text-primary-brand";
       }
       // Any code to be executed when the window is scrolled
     }
@@ -100,13 +120,20 @@ export default {
 .nav-link {
   font-weight: 600;
   font-size: 16px;
-  color: #31528f !important;
+  color: #2e57a5 !important;
+  transition: 0.9s ease;
 }
 .nav-link:hover {
-  transition: 0.5s ease;
-  color: #31528f !important;
+  border-radius: 5px;
+  background-color: #2b4c8f;
+  color: #e6e6e6 !important;
 
-  display: block;
+  display: inline-block;
+}
+.is-active {
+  border-radius: 5px;
+  background-color: #2b4c8f;
+  color: #e6e6e6 !important;
 }
 .nav-item .item-menu-text:hover {
   color: #2665d6;
@@ -129,5 +156,9 @@ body {
   font-weight: 600;
   font-size: 16px;
   color: #fbfdff !important;
+}
+.text-primary-brand {
+  font-weight: 800;
+  color: #256195;
 }
 </style>

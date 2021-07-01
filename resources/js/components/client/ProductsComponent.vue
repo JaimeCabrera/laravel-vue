@@ -13,7 +13,7 @@
           data-aos-mirror="true"
           data-aos-once="false"
         >
-          <h2 class="subtitle-p mb-5 mx-auto">Productos</h2>
+          <h2 class="subtitle-p mb-5 mx-auto">Nuestros Productos</h2>
         </div>
       </div>
       <div class="row d-flex flex-wrap mt-3">
