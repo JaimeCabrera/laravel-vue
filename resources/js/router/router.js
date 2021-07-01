@@ -16,7 +16,7 @@ import ProductDetails from "../pages/client/ProductDetails";
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: "hash",
+  mode: "history",
   routes: [
     /* client routes */
     {
