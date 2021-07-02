@@ -22,13 +22,13 @@
           <div class="row mt-3">
             <div class="col-3 d-flex flex-column ">
               <i
-                class="fas fa-phone-square-alt fa-3x text-green mx-auto mt-3"
+                class="fas fa-phone-square-alt fa-3x text-secondary mx-auto mt-3"
               ></i>
               <i
-                class="fas fa-envelope-square fa-3x text-green mx-auto mt-3"
+                class="fas fa-envelope-square fa-3x text-secondary mx-auto mt-3"
               ></i>
               <i
-                class="fas fa-map-marker-alt fa-3x text-green mx-auto mt-3"
+                class="fas fa-map-marker-alt fa-3x text-secondary mx-auto mt-3"
               ></i>
             </div>
             <div class="col-9 d-flex flex-column">
@@ -69,7 +69,7 @@
                 ></textarea>
               </div>
             </div>
-            <a class="btn btn-primary btn-lg mt-3 mb-5 text-white"
+            <a class="btn btn-outline-primary btn-lg mt-3 mb-5"
               >Enviar Mensaje</a
             >
           </form>
