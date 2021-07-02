@@ -7,11 +7,13 @@
     <products-component></products-component>
 
     <contact-component></contact-component>
+    <footer-component></footer-component>
   </div>
 </template>
 
 <script>
 import ContactComponent from "../../components/client/ContactComponent.vue";
+import FooterComponent from "../../components/client/FooterComponent.vue";
 import ProductsComponent from "../../components/client/ProductsComponent.vue";
 import ServicesComponent from "../../components/client/ServicesComponent.vue";
 import SliderCcomponent from "../../components/client/SliderCcomponent.vue";
@@ -20,7 +22,8 @@ export default {
     SliderCcomponent,
     ServicesComponent,
     ProductsComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   },
   mounted() {
     // console.log("items del index");

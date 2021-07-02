@@ -16,7 +16,7 @@ export default {};
 <style scoped>
 /* float button */
 .btn-float {
-  background-color: #9da7a1;
+  background-color: #71b85f;
   color: white;
   font-weight: 500;
   border-radius: 25px;
@@ -28,7 +28,7 @@ export default {};
   transition: 0.4s ease-in;
 }
 .btn-float:hover {
-  background-color: #71b85f;
+  background-color: #27ae60;
   color: #ebebeb !important;
 }
 </style>

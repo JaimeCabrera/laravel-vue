@@ -11,7 +11,7 @@
     <img
       class="product-img img-fluid shadow"
       :src="'/storage/' + product.image"
-      alt=""
+      alt="imagen del producto"
       width="176"
       height="88"
     />
