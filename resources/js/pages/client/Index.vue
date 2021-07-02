@@ -7,7 +7,6 @@
     <products-component></products-component>
 
     <contact-component></contact-component>
-    <footer-component></footer-component>
   </div>
 </template>
 

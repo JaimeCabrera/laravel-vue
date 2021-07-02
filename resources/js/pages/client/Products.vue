@@ -103,6 +103,7 @@ export default {
   },
   created() {
     this.getAllCategories();
+    // this.getCategoryProducts(1);
   },
   mounted() {}
 };

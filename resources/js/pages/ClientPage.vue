@@ -78,13 +78,15 @@
       <router-view></router-view>
     </transition>
     <btn-float></btn-float>
+    <footer-component></footer-component>
   </div>
 </template>
 
 <script>
 import BtnFloat from "../components/BtnFloat.vue";
+import FooterComponent from "../components/client/FooterComponent.vue";
 export default {
-  components: { BtnFloat },
+  components: { BtnFloat, FooterComponent },
   /* TODO MOSTAR SP}OLO LOGIN O ADMIN+ */
   data() {
     return {

@@ -5632,6 +5632,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_BtnFloat_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/BtnFloat.vue */ "./resources/js/components/BtnFloat.vue");
+/* harmony import */ var _components_client_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/client/FooterComponent.vue */ "./resources/js/components/client/FooterComponent.vue");
+//
 //
 //
 //
@@ -5716,9 +5718,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    BtnFloat: _components_BtnFloat_vue__WEBPACK_IMPORTED_MODULE_0__.default
+    BtnFloat: _components_BtnFloat_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    FooterComponent: _components_client_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_1__.default
   },
 
   /* TODO MOSTAR SP}OLO LOGIN O ADMIN+ */
@@ -6507,7 +6511,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -6844,7 +6847,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    this.getAllCategories();
+    this.getAllCategories(); // this.getCategoryProducts(1);
   },
   mounted: function mounted() {}
 });
@@ -12303,7 +12306,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* $primary: #71b85f;\r\n$secondary: #2c343b; */\n.activo[data-v-11047622] {\r\n  border-left: 3px solid #2665d6 !important;\r\n  color: #2665d6 !important;\r\n  font-weight: 700 !important;\n}\n.list-group-item[data-v-11047622]:hover {\r\n  color: #2665d6 !important;\r\n  font-weight: bold;\n}\n.slider-products[data-v-11047622] {\r\n  height: 35vh;\r\n  background-size: cover;\r\n  background-image: url(\"/img/bg-products.jpg\");\r\n  background-repeat: no-repeat;\r\n  background-attachment: fixed;\n}\n.categorias[data-v-11047622] {\r\n  font-weight: 700;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* $primary: #71b85f;\r\n$secondary: #2c343b; */\n.activo[data-v-11047622] {\r\n  border-left: 3px solid #2665d6 !important;\r\n  color: #2665d6 !important;\r\n  font-weight: 700 !important;\n}\n.list-group-item[data-v-11047622]:hover {\r\n  color: #2665d6 !important;\r\n  font-weight: bold;\n}\n.slider-products[data-v-11047622] {\r\n  height: 35vh;\r\n  background-size: cover;\r\n  background-image: url(\"/img/bg-products.jpg\");\r\n  background-repeat: no-repeat;\r\n  background-attachment: fixed;\n}\n.categorias[data-v-11047622] {\r\n  font-weight: 700;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -46774,7 +46777,9 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("btn-float")
+      _c("btn-float"),
+      _vm._v(" "),
+      _c("footer-component")
     ],
     1
   )
@@ -47661,9 +47666,7 @@ var render = function() {
       _vm._v(" "),
       _c("products-component"),
       _vm._v(" "),
-      _c("contact-component"),
-      _vm._v(" "),
-      _c("footer-component")
+      _c("contact-component")
     ],
     1
   )
