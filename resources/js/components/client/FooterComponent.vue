@@ -39,6 +39,10 @@
             Soluciones Ambientales EC &copy; <span id="copyright"> </span>
           </h5>
         </div>
+        <span class="float-end"
+          >Developed by
+          <a href="https://github.com/JaimeCabrera" target="_blank">Jaime C</a>
+        </span>
       </div>
     </div>
   </div>

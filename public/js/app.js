@@ -5230,6 +5230,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     document.getElementById("copyright").appendChild(document.createTextNode(new Date().getFullYear()));
@@ -46100,6 +46104,17 @@ var staticRenderFns = [
           _vm._v("\n          Soluciones Ambientales EC © "),
           _c("span", { attrs: { id: "copyright" } })
         ])
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "float-end" }, [
+        _vm._v("Developed by\n        "),
+        _c(
+          "a",
+          {
+            attrs: { href: "https://github.com/JaimeCabrera", target: "_blank" }
+          },
+          [_vm._v("Jaime C")]
+        )
       ])
     ])
   }
