@@ -1,79 +1,6 @@
 <template>
   <div class="">
-    <nav
-      class="navbar navbar-expand-lg p-1  shadow-sm"
-      :class="clase"
-      v-on:scroll.passive="handleScroll"
-    >
-      <div class="container">
-        <router-link class="navbar-brand" :to="{ name: 'index' }">
-          <img
-            :src="'/img/' + logo"
-            class="img"
-            width="80"
-            height="60"
-            alt="logo soluciones ambientales"
-            Soluciones
-            Ambientales
-          />
-          <span class="text-uppercase" :class="text_name"
-            >Soluciones Ambientales</span
-          >
-        </router-link>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="px-5 collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <router-link
-                class="nav-link is-active mx-2"
-                aria-current="page"
-                :to="{ name: 'index' }"
-                >Inicio</router-link
-              >
-            </li>
-            <li class="nav-item">
-              <router-link
-                class="nav-link mx-2"
-                :to="{
-                  name: 'client-products',
-                  params: { id: '1' }
-                }"
-                >Productos</router-link
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="form-inline my-2 my-lg-0">
-        <div class="d-flex">
-          <!-- <ul class="nav">
-            <li v-if="auth" class="nav-item">
-              <router-link class="nav-link" aria-current="page" to="/login"
-                ><i class="fas fa-sign-in-alt mx-1"></i>Login</router-link
-              >
-            </li>
-            <li v-else class="nav-item">
-              <router-link class="nav-link" aria-current="page" to="/admin"
-                >Admin</router-link
-              >
-            </li>
-          </ul> -->
-        </div>
-      </div>
-    </nav>
+    <nav-bar></nav-bar>
     <transition name="slide-fade">
       <router-view></router-view>
     </transition>
@@ -85,98 +12,23 @@
 <script>
 import BtnFloat from "../components/BtnFloat.vue";
 import FooterComponent from "../components/client/FooterComponent.vue";
+import NavBar from "../components/NavBar.vue";
 export default {
-  components: { BtnFloat, FooterComponent },
+  components: { BtnFloat, FooterComponent, NavBar },
   /* TODO MOSTAR SP}OLO LOGIN O ADMIN+ */
   data() {
     return {
-      auth: null,
-      clase: "navbar-light bg-light bg-white",
-      text_name: "text-primary-brand",
-      logo: "logo_primary.svg"
+      auth: null
+      // clase: "navbar-light bg-light bg-white",
+      // text_name: "text-primary-brand",
+      // logo: "logo_primary.svg"
     };
   },
   created() {
-    window.addEventListener("scroll", this.handleScroll);
+    // window.addEventListener("scroll", this.handleScroll);
     this.auth = localStorage.getItem("auth");
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll(e) {
-      if (window.scrollY > 150) {
-        this.clase = "bg-white-scrolled sticky-top";
-        this.text_name = "text-white";
-        this.logo = "logo_secondary.svg";
-      } else {
-        this.clase = "navbar-light bg-light bg-white";
-        this.logo = "logo_primary.svg";
-        this.text_name = "text-primary-brand";
-      }
-      // Any code to be executed when the window is scrolled
-    }
   }
 };
 </script>
 
-<style scoped>
-.nav-link {
-  font-weight: 600;
-  font-size: 16px;
-  color: #2e57a5 !important;
-  transition: 0.9s ease;
-}
-.nav-link:hover {
-  border-radius: 5px;
-  background-color: #2b4c8f;
-  color: #e6e6e6 !important;
-
-  display: inline-block;
-}
-.is-active {
-  border-radius: 5px;
-  background-color: #2b4c8f;
-  color: #e6e6e6 !important;
-}
-.nav-item .item-menu-text:hover {
-  color: #2665d6;
-}
-.navbar-light {
-  background-color: rgb(255, 250, 246);
-}
-
-body {
-  min-height: 200vh;
-}
-.bg-white {
-  transition: 0.8s ease-in-out;
-  background: transparent;
-}
-.bg-white-scrolled {
-  background: #2665d6;
-}
-.bg-white-scrolled .nav-link {
-  font-weight: 600;
-  font-size: 16px;
-  color: #fbfdff !important;
-}
-.text-primary-brand {
-  font-weight: 800;
-  color: #256195;
-}
-
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all 0.3s ease;
-}
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
-</style>
+<style scoped></style>

@@ -36,13 +36,13 @@ export default new VueRouter({
           path: "/products/category/:id",
           component: ClientProducts,
           name: "client-products"
-        },
-        {
-          path: "/products/:id/details",
-          component: ProductDetails,
-          name: "client-product-details"
         }
       ]
+    },
+    {
+      path: "/products/:id/details",
+      component: ProductDetails,
+      name: "client-product-details"
     },
     /* admin routes */
     {

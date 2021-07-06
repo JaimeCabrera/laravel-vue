@@ -9,7 +9,7 @@
               EQUIPOS E INSUMOS PARA LABORATORIO.
             </p>
             <router-link
-              :to="{ name: 'client-products' }"
+              :to="{ name: 'client-products', params: { id: '1' } }"
               class="btn btn-rounded btn-primary rounded btn-lg mt-3 text-white"
               >VER PRODUCTOS</router-link
             >
@@ -33,7 +33,7 @@ export default {};
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100px);
+    transform: translateX(5vh);
   }
 }
 .page-title {

@@ -2,10 +2,10 @@
   <div class="container-fluid bg-primary pt-5 pb-5 ">
     <div class="container text-white">
       <div class="row p-3 ">
-        <div class="col-md-3">
+        <div class="col-md-3  col-sm-12 mb-3 d-flex justify-content-center">
           <img
             :src="'/img/logo_secondary.svg'"
-            class="img-fluid float-center"
+            class="img-fluid"
             width="100px"
             height="100px"
             alt="logo soluciones ambientales"
@@ -16,12 +16,12 @@
           <p class="text-lg mt-4">Samborondon</p>
           <p class="text-lg">Guayaquil, Ecuador</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12 mb-3">
           <h3>Contacto</h3>
           <p class="text-lg mt-4">Email: solcuionesambientales@email.cxom</p>
           <p class="text-lg">Telefonos:</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-12 mb-3">
           <h3>Redes Sociales</h3>
           <div class="row mt-4">
             <a class="text-white" href="">

@@ -1,75 +1,86 @@
 <template>
-  <section class="bg-light ">
-    <div class="slider-products pt-5">
-      <div class="jumbotron jumbotron-fluid bg-transparent">
-        <div class="container"></div>
-      </div>
-    </div>
-    <div class="container my-3 p-4  mb-5">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-primary">
-            {{ product.name }}
-          </h2>
-          <hr class="text-primary" />
+  <div>
+    <nav-bar></nav-bar>
+    <section class="bg-light ">
+      <div class="slider-products pt-5">
+        <div class="jumbotron jumbotron-fluid bg-transparent">
+          <div class="container"></div>
         </div>
       </div>
-      <div class="row mt-5">
-        <div class="col-md-5 col-sm-12">
-          <img
-            :src="'/storage/' + product.image"
-            alt="img-product"
-            class="img-product img-fluid"
-          />
+      <div class="container my-3 p-4  mb-5">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-primary">
+              {{ product.name }}
+            </h2>
+            <hr class="text-primary" />
+          </div>
         </div>
-        <div class="col-md-7 col-sm-12">
-          <p class="text-black-50 mt-3 precio">Precio: ${{ product.price }}</p>
-          <span class="b">Categoria {{ category.name }}</span>
-          <h4>Descripcion</h4>
-          <p class=" descripcion-producto">
-            {{ product.description }}
-          </p>
-          <a class="btn btn-outline-primary btn-lg mb-5 text-uppercase" href=""
-            >Solicitar Cotización</a
-          >
-
-          <hr />
-          <p class="text-black-50">Contactanos:</p>
-
-          <social-links-component></social-links-component>
-        </div>
-      </div>
-      <div class="row mb-5">
-        <div class="col-12 mb-5 mt-5">
-          <p>
-            <button
-              class="btn btn-primary"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseExample"
-              aria-expanded="false"
-              aria-controls="collapseExample"
+        <div class="row mt-5">
+          <div class="col-md-5 col-sm-12">
+            <img
+              :src="'/storage/' + product.image"
+              alt="img-product"
+              class="img-product img-fluid"
+            />
+          </div>
+          <div class="col-md-7 col-sm-12">
+            <p class="text-black-50 mt-3 precio">
+              Precio: ${{ product.price }}
+            </p>
+            <span class="b">Categoria {{ category.name }}</span>
+            <h4>Descripcion</h4>
+            <p class=" descripcion-producto">
+              {{ product.description }}
+            </p>
+            <a
+              class="btn btn-outline-primary btn-lg mb-5 text-uppercase"
+              href=""
+              >Solicitar Cotización</a
             >
-              Descripción
-            </button>
-          </p>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-              Some placeholder content for the collapse component. This panel is
-              hidden by default but revealed when the user activates the
-              relevant trigger.
+
+            <hr />
+            <p class="text-black-50">Contactanos:</p>
+
+            <social-links-component></social-links-component>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-12 mb-5 mt-5">
+            <p>
+              <button
+                class="btn btn-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                Descripción
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                Some placeholder content for the collapse component. This panel
+                is hidden by default but revealed when the user activates the
+                relevant trigger.
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <footer-component></footer-component>
+  </div>
 </template>
 
 <script>
+import FooterComponent from "../../components/client/FooterComponent.vue";
 import SocialLinksComponent from "../../components/client/SocialLinksComponent.vue";
+import NavBar from "../../components/NavBar.vue";
+import ClientPage from "../ClientPage.vue";
 export default {
-  components: { SocialLinksComponent },
+  components: { SocialLinksComponent, ClientPage, NavBar, FooterComponent },
   data() {
     return {
       product: {},
