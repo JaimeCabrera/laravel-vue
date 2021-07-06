@@ -24,7 +24,7 @@
 
       <!-- <div class="product-price-footer">per day</div> -->
     </div>
-    <p class="product-text">{{ product.short_description }}.</p>
+    <p v-html="product.short_description" class="product-text"></p>
     <router-link
       class="button btn-primary"
       :to="{ name: 'client-product-details', params: { id: product.id } }"

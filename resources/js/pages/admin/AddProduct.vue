@@ -2,13 +2,13 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col-12">
-        <div class="card shadow">
-          <div class="card-header">
-            <h6 v-if="editMode" class="m-2 font-weight-bold text-primary">
+        <div class="card shadow ">
+          <div class="card-header bg-secondary">
+            <h6 v-if="editMode" class="m-2 font-weight-bold text-white">
               Editando producto:
               {{ product.name }}
             </h6>
-            <h6 v-else class="m-2 font-weight-bold text-primary">
+            <h6 v-else class="m-2 font-weight-bold text-white-50">
               Agregar Nuevo Producto
             </h6>
           </div>
@@ -74,24 +74,30 @@
                 <div class="col">
                   <div class="form-group">
                     <label for="">Descripcion corta</label>
-                    <textarea
+                    <VueTrix
+                      placeholder="Escriba la descripción corta"
+                      v-model="product.short_description"
+                    ></VueTrix>
+                    <!-- <textarea
                       class="form-control"
                       name=""
                       v-model="product.short_description"
                       rows="5"
+                      placeholder="Limite de caracteres máximo 255"
                       maxlength="255"
-                    ></textarea>
+                    ></textarea> -->
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
                     <label for="">Descripcion</label>
-                    <textarea
+                    <VueTrix v-model="product.description"></VueTrix>
+                    <!-- <textarea
                       class="form-control"
                       name=""
                       v-model="product.description"
                       rows="5"
-                    ></textarea>
+                    ></textarea> -->
                   </div>
                 </div>
               </div>
@@ -152,10 +158,12 @@
 <script>
 const token = localStorage.getItem("token");
 import axios from "axios";
+import VueTrix from "vue-trix";
 export default {
+  components: { VueTrix },
   data() {
     return {
-      product: {},
+      product: { price: "0" },
       categories: [],
       selected: "",
       editMode: null,

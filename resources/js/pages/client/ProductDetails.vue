@@ -30,9 +30,7 @@
             </p>
             <span class="b">Categoria {{ category.name }}</span>
             <h4>Descripcion</h4>
-            <p class=" descripcion-producto">
-              {{ product.description }}
-            </p>
+            <p v-html="product.description" class=" descripcion-producto"></p>
             <a
               class="btn btn-outline-primary btn-lg mb-5 text-uppercase"
               href=""

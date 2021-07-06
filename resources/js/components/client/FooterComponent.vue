@@ -1,8 +1,8 @@
 <template>
-  <div class="container-fluid bg-primary pt-5 pb-5 ">
+  <div class="container-fluid bg-primary pt-5 pb-5 mt-5">
     <div class="container text-white">
       <div class="row p-3 ">
-        <div class="col-md-3  col-sm-12 mb-3 d-flex justify-content-center">
+        <div class="col-md-3  col-sm-12 mb-2 d-flex justify-content-center">
           <img
             :src="'/img/logo_secondary.svg'"
             class="img-fluid"

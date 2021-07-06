@@ -4,7 +4,7 @@ import router from "./router/router";
 import App from "./App.vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import "vue-trix";
 require("./bootstrap");
 
 // window.Vue = require('vue').default;
