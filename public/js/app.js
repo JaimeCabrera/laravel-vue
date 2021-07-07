@@ -5679,6 +5679,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5811,6 +5813,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6525,7 +6534,6 @@ var token = localStorage.getItem("token");
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (res) {
-        console.log(res);
         _this2.products = res.data.products.data;
         _this2.loading = false;
       })["catch"](function (e) {
@@ -46945,7 +46953,7 @@ var render = function() {
                         _c(
                           "router-link",
                           {
-                            staticClass: "nav-link active",
+                            staticClass: "nav-link ",
                             attrs: { to: { name: "admin-products" } }
                           },
                           [_vm._v("Productos")]
@@ -46987,7 +46995,7 @@ var render = function() {
                                 staticClass:
                                   "fas fa-sign-out-alt text-white-50 mx-2"
                               }),
-                              _vm._v("Salir")
+                              _vm._v("Cerrar\n                Sesión")
                             ]
                           )
                         ])
@@ -47001,9 +47009,13 @@ var render = function() {
                           "router-link",
                           {
                             staticClass: "nav-link ",
-                            attrs: { "aria-current": "page", to: "/" }
+                            attrs: {
+                              "aria-current": "page",
+                              to: "/",
+                              target: "_blank"
+                            }
                           },
-                          [_vm._v("Index")]
+                          [_vm._v("Ver página")]
                         )
                       ],
                       1
@@ -47332,17 +47344,20 @@ var render = function() {
               _c("div", { staticClass: "row mb-4" }, [
                 _c("div", { staticClass: "col" }, [
                   _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "imagen" } }, [
-                      _vm._v("Imagen del producto")
-                    ]),
+                    _c(
+                      "label",
+                      { staticClass: "form-label", attrs: { for: "formFile" } },
+                      [_vm._v("Selecciona una imagen")]
+                    ),
                     _vm._v(" "),
                     _c("input", {
-                      staticClass: "form-control-file btn",
+                      staticClass: "form-control ",
                       class: {
                         "is-invalid": _vm.error_image,
                         "": !_vm.error_image
                       },
                       attrs: {
+                        value: "Upload",
                         type: "file",
                         name: "image",
                         accept: "image/png, image/jpeg"
@@ -47769,7 +47784,11 @@ var render = function() {
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(product.price))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(product.short_description))]),
+                          _c("td", {
+                            domProps: {
+                              innerHTML: _vm._s(product.short_description)
+                            }
+                          }),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(product.category.name))]),
                           _vm._v(" "),

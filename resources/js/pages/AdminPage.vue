@@ -21,9 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-5">
             <li class="nav-item">
-              <router-link
-                class="nav-link active"
-                :to="{ name: 'admin-products' }"
+              <router-link class="nav-link " :to="{ name: 'admin-products' }"
                 >Productos</router-link
               >
             </li>
@@ -37,13 +35,17 @@
             <ul class="nav">
               <li v-if="auth" class="nav-item">
                 <a class="btn btn-primary" @click="handleLogout"
-                  ><i class="fas fa-sign-out-alt text-white-50 mx-2"></i
-                  >Salir</a
+                  ><i class="fas fa-sign-out-alt text-white-50 mx-2"></i>Cerrar
+                  Sesión</a
                 >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link " aria-current="page" to="/"
-                  >Index</router-link
+                <router-link
+                  class="nav-link "
+                  aria-current="page"
+                  to="/"
+                  target="_blank"
+                  >Ver página</router-link
                 >
               </li>
             </ul>

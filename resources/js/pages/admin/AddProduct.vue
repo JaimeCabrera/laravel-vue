@@ -115,9 +115,15 @@
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-group">
-                    <label for="imagen">Imagen del producto</label>
+                    <label for="formFile" class="form-label"
+                      >Selecciona una imagen</label
+                    >
+                    <!--
+                    <input class="form-control" type="file" id="formFile" /> -->
+
                     <input
-                      class="form-control-file btn"
+                      value="Upload"
+                      class="form-control "
                       type="file"
                       @change="onImageChange"
                       name="image"
@@ -128,6 +134,7 @@
                       }"
                     />
                     <div class="invalid-feedback">Selecciona una imagen</div>
+                    <!-- <label for="imagen">Imagen del producto</label> -->
                   </div>
 
                   <img
@@ -306,4 +313,4 @@ export default {
 };
 </script>
 
-0. <style></style>
+<style></style>

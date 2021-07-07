@@ -46,7 +46,7 @@
                   <td>{{ index + 1 }}</td>
                   <td>{{ product.name }}</td>
                   <td>{{ product.price }}</td>
-                  <td>{{ product.short_description }}</td>
+                  <td v-html="product.short_description"></td>
                   <td>{{ product.category.name }}</td>
                   <td>
                     <img
@@ -131,7 +131,6 @@ export default {
           }
         })
         .then(res => {
-          console.log(res);
           this.products = res.data.products.data;
           this.loading = false;
         })
