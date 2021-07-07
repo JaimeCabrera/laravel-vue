@@ -5972,27 +5972,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var token = localStorage.getItem("token");
 
 
@@ -6035,8 +6014,7 @@ var token = localStorage.getItem("token");
           name: "products"
         });
       }
-    } //  this.editMode = this.$route.params.product;
-
+    }
 
     this.getCategories();
   },
@@ -6709,7 +6687,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_client_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/client/FooterComponent.vue */ "./resources/js/components/client/FooterComponent.vue");
 /* harmony import */ var _components_client_SocialLinksComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/client/SocialLinksComponent.vue */ "./resources/js/components/client/SocialLinksComponent.vue");
 /* harmony import */ var _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/NavBar.vue */ "./resources/js/components/NavBar.vue");
-/* harmony import */ var _ClientPage_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ClientPage.vue */ "./resources/js/pages/ClientPage.vue");
+/* harmony import */ var _components_ProductItem_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ProductItem.vue */ "./resources/js/components/ProductItem.vue");
+/* harmony import */ var _ClientPage_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ClientPage.vue */ "./resources/js/pages/ClientPage.vue");
 //
 //
 //
@@ -6775,15 +6754,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -6791,14 +6762,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     SocialLinksComponent: _components_client_SocialLinksComponent_vue__WEBPACK_IMPORTED_MODULE_1__.default,
-    ClientPage: _ClientPage_vue__WEBPACK_IMPORTED_MODULE_3__.default,
+    ClientPage: _ClientPage_vue__WEBPACK_IMPORTED_MODULE_4__.default,
     NavBar: _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_2__.default,
-    FooterComponent: _components_client_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_0__.default
+    FooterComponent: _components_client_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_0__.default,
+    ProductItem: _components_ProductItem_vue__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
       product: {},
-      category: {}
+      category: {},
+      products: {},
+      category_id: ""
     };
   },
   created: function created() {
@@ -6806,6 +6780,7 @@ __webpack_require__.r(__webpack_exports__);
     var id = this.$route.params.id;
     this.getProductDetail(id);
   },
+  mounted: function mounted() {},
   methods: {
     getProductDetail: function getProductDetail(id) {
       var _this = this;
@@ -6813,7 +6788,25 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/products/".concat(id)).then(function (res) {
         _this.product = res.data.product;
         _this.category = res.data.category[0];
+        _this.category_id = _this.category.id;
+
+        _this.getCategoryProducts(_this.category_id);
       })["catch"](function (err) {// console.log(err);
+      });
+    },
+    getCategoryProducts: function getCategoryProducts(id) {
+      var _this2 = this;
+
+      this.loading = true;
+      axios.get("/api/products-category", {
+        params: {
+          id: id
+        }
+      }).then(function (res) {
+        _this2.products = res.data.products;
+        _this2.loading = false;
+      })["catch"](function (e) {
+        console.log(e);
       });
     }
   }
@@ -47146,7 +47139,7 @@ var render = function() {
                 _c("div", { staticClass: "col" }, [
                   _c("div", { staticClass: "form-group " }, [
                     _c("label", { attrs: { for: "inputState" } }, [
-                      _vm._v("Seleciona la Categoria")
+                      _vm._v("Categorias:")
                     ]),
                     _vm._v(" "),
                     _c(
@@ -48147,7 +48140,31 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "row mb-5" }, [
+            _c(
+              "div",
+              { staticClass: "col-12 mb-5 mt-5" },
+              [
+                _c("h3", { staticClass: "text-primary" }, [
+                  _vm._v("Productos Relacionados:")
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _vm._l(_vm.products, function(product, index) {
+                  return _c(
+                    "div",
+                    { key: index, staticClass: "col-md-3 mt-5" },
+                    [_c("product-item", { attrs: { product: product } })],
+                    1
+                  )
+                }),
+                _vm._v(" "),
+                _c("hr")
+              ],
+              2
+            )
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -48164,43 +48181,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "slider-products pt-5" }, [
       _c("div", { staticClass: "jumbotron jumbotron-fluid bg-transparent" }, [
         _c("div", { staticClass: "container" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mb-5" }, [
-      _c("div", { staticClass: "col-12 mb-5 mt-5" }, [
-        _c("p", [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary",
-              attrs: {
-                type: "button",
-                "data-bs-toggle": "collapse",
-                "data-bs-target": "#collapseExample",
-                "aria-expanded": "false",
-                "aria-controls": "collapseExample"
-              }
-            },
-            [_vm._v("\n              Descripción\n            ")]
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "collapse", attrs: { id: "collapseExample" } },
-          [
-            _c("div", { staticClass: "card card-body" }, [
-              _vm._v(
-                "\n              Some placeholder content for the collapse component. This panel\n              is hidden by default but revealed when the user activates the\n              relevant trigger.\n            "
-              )
-            ])
-          ]
-        )
       ])
     ])
   }

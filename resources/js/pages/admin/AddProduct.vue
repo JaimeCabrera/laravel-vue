@@ -17,8 +17,7 @@
               <div class="row mb-4">
                 <div class="col">
                   <div class="form-group ">
-                    <label for="inputState">Seleciona la Categoria</label>
-
+                    <label for="inputState">Categorias:</label>
                     <select
                       id="inputState"
                       v-model="selected"
@@ -82,14 +81,6 @@
                     <div class="invalid-feedback">
                       {{ error_short_description }}
                     </div>
-                    <!-- <textarea
-                      class="form-control"
-                      name=""
-                      v-model="product.short_description"
-                      rows="5"
-                      placeholder="Limite de caracteres máximo 255"
-                      maxlength="255"
-                    ></textarea> -->
                   </div>
                 </div>
                 <div class="col">
@@ -103,12 +94,6 @@
                       v-model="product.description"
                     ></VueTrix>
                     <div class="invalid-feedback">{{ error_description }}</div>
-                    <!-- <textarea
-                      class="form-control"
-                      name=""
-                      v-model="product.description"
-                      rows="5"
-                    ></textarea> -->
                   </div>
                 </div>
               </div>
@@ -118,9 +103,6 @@
                     <label for="formFile" class="form-label"
                       >Selecciona una imagen</label
                     >
-                    <!--
-                    <input class="form-control" type="file" id="formFile" /> -->
-
                     <input
                       value="Upload"
                       class="form-control "
@@ -134,9 +116,7 @@
                       }"
                     />
                     <div class="invalid-feedback">Selecciona una imagen</div>
-                    <!-- <label for="imagen">Imagen del producto</label> -->
                   </div>
-
                   <img
                     v-bind:src="imagePreview"
                     width="100"
@@ -145,7 +125,6 @@
                   />
                 </div>
               </div>
-
               <hr />
               <div class="row">
                 <div class="col d-flex justify-content-end mt-3">
@@ -218,7 +197,6 @@ export default {
         this.$router.push({ name: "products" });
       }
     }
-    //  this.editMode = this.$route.params.product;
     this.getCategories();
   },
   methods: {

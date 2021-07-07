@@ -45,25 +45,16 @@
         </div>
         <div class="row mb-5">
           <div class="col-12 mb-5 mt-5">
-            <p>
-              <button
-                class="btn btn-primary"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseExample"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                Descripción
-              </button>
-            </p>
-            <div class="collapse" id="collapseExample">
-              <div class="card card-body">
-                Some placeholder content for the collapse component. This panel
-                is hidden by default but revealed when the user activates the
-                relevant trigger.
-              </div>
+            <h3 class="text-primary">Productos Relacionados:</h3>
+            <hr />
+            <div
+              v-for="(product, index) in products"
+              :key="index"
+              class="col-md-3 mt-5"
+            >
+              <product-item :product="product"></product-item>
             </div>
+            <hr />
           </div>
         </div>
       </div>
@@ -76,13 +67,22 @@
 import FooterComponent from "../../components/client/FooterComponent.vue";
 import SocialLinksComponent from "../../components/client/SocialLinksComponent.vue";
 import NavBar from "../../components/NavBar.vue";
+import ProductItem from "../../components/ProductItem.vue";
 import ClientPage from "../ClientPage.vue";
 export default {
-  components: { SocialLinksComponent, ClientPage, NavBar, FooterComponent },
+  components: {
+    SocialLinksComponent,
+    ClientPage,
+    NavBar,
+    FooterComponent,
+    ProductItem
+  },
   data() {
     return {
       product: {},
-      category: {}
+      category: {},
+      products: {},
+      category_id: ""
     };
   },
   created() {
@@ -90,6 +90,7 @@ export default {
     const id = this.$route.params.id;
     this.getProductDetail(id);
   },
+  mounted() {},
   methods: {
     getProductDetail(id) {
       axios
@@ -97,9 +98,23 @@ export default {
         .then(res => {
           this.product = res.data.product;
           this.category = res.data.category[0];
+          this.category_id = this.category.id;
+          this.getCategoryProducts(this.category_id);
         })
         .catch(err => {
           // console.log(err);
+        });
+    },
+    getCategoryProducts(id) {
+      this.loading = true;
+      axios
+        .get("/api/products-category", { params: { id } })
+        .then(res => {
+          this.products = res.data.products;
+          this.loading = false;
+        })
+        .catch(e => {
+          console.log(e);
         });
     }
   }
