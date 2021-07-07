@@ -18,29 +18,20 @@
                 <div class="col">
                   <div class="form-group ">
                     <label for="inputState">Seleciona la Categoria</label>
-                    <select
-                      v-if="editMode"
-                      id="inputState"
-                      v-model="selected"
-                      class="form-control"
-                    >
-                      <option selected disabled>categoria...</option>
 
-                      <option
-                        :value="category.id"
-                        v-for="(category, index) in categories"
-                        :key="index"
-                      >
-                        {{ category.name }}</option
-                      >
-                    </select>
                     <select
-                      v-else
                       id="inputState"
                       v-model="selected"
-                      class="form-control"
+                      class="form-select"
+                      :class="{
+                        'is-invalid': !selected,
+                        '': selected
+                      }"
+                      required
                     >
-                      <option selected disabled>categoria...</option>
+                      <option selected disabled value=""
+                        >Selecciona una categoría...</option
+                      >
                       <option
                         :value="category.id"
                         v-for="(category, index) in categories"
@@ -49,6 +40,7 @@
                         {{ category.name }}</option
                       >
                     </select>
+                    <div class="invalid-feedback">Selecciona una categoria</div>
                   </div>
                 </div>
                 <div class="col">
@@ -57,8 +49,13 @@
                     type="text"
                     v-model="product.name"
                     class="form-control"
-                    placeholder=""
+                    :class="{
+                      'is-invalid': error_name,
+                      '': !error_name
+                    }"
+                    required
                   />
+                  <div class="invalid-feedback">{{ error_name }}</div>
                 </div>
                 <div class="col">
                   <label>Precio del producto</label>
@@ -77,7 +74,14 @@
                     <VueTrix
                       placeholder="Escriba la descripción corta"
                       v-model="product.short_description"
+                      :class="{
+                        'is-invalid': error_short_description,
+                        '': !error_short_description
+                      }"
                     ></VueTrix>
+                    <div class="invalid-feedback">
+                      {{ error_short_description }}
+                    </div>
                     <!-- <textarea
                       class="form-control"
                       name=""
@@ -91,7 +95,14 @@
                 <div class="col">
                   <div class="form-group">
                     <label for="">Descripcion</label>
-                    <VueTrix v-model="product.description"></VueTrix>
+                    <VueTrix
+                      :class="{
+                        'is-invalid': error_description,
+                        '': !error_description
+                      }"
+                      v-model="product.description"
+                    ></VueTrix>
+                    <div class="invalid-feedback">{{ error_description }}</div>
                     <!-- <textarea
                       class="form-control"
                       name=""
@@ -111,7 +122,12 @@
                       @change="onImageChange"
                       name="image"
                       accept="image/png, image/jpeg"
+                      :class="{
+                        'is-invalid': error_image,
+                        '': !error_image
+                      }"
                     />
+                    <div class="invalid-feedback">Selecciona una imagen</div>
                   </div>
 
                   <img
@@ -163,14 +179,25 @@ export default {
   components: { VueTrix },
   data() {
     return {
-      product: { price: "0" },
+      product: {
+        name: "",
+        category_id: "",
+        short_description: "",
+        description: "",
+        price: "0",
+        image: ""
+      },
       categories: [],
       selected: "",
       editMode: null,
       productId: "",
       image: "",
       imagePreview: null,
-      showPreview: false
+      showPreview: false,
+      error_name: null,
+      error_description: null,
+      error_short_description: null,
+      error_image: null
     };
   },
   mounted() {
@@ -189,7 +216,8 @@ export default {
   },
   methods: {
     onImageChange(e) {
-      this.product.image = e.target.files[0];
+      this.image = e.target.files[0];
+      // this.product.image = e.target.files[0];
       // console.log(this.product.image);
       let reader = new FileReader();
       reader.addEventListener(
@@ -201,9 +229,9 @@ export default {
         false
       );
 
-      if (this.product.image) {
-        if (/\.(jpe?g|png|gif)$/i.test(this.product.image.name)) {
-          reader.readAsDataURL(this.product.image);
+      if (this.image) {
+        if (/\.(jpe?g|png|gif)$/i.test(this.image.name)) {
+          reader.readAsDataURL(this.image);
         }
       }
     },
@@ -215,7 +243,6 @@ export default {
           }
         })
         .then(res => {
-          console.log(res);
           this.categories = res.data.categories;
         })
         .catch(e => {
@@ -228,22 +255,22 @@ export default {
       //   Authorization: `Bearer ${token}`,
       //   _token: "{{ csrf_token() }}"
       // };
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      };
 
-      let data = new FormData();
+      const data = new FormData();
       data.append("name", this.product.name);
       data.append("short_description", this.product.short_description);
       data.append("description", this.product.description);
       data.append("category_id", this.selected);
       data.append("price", this.product.price);
-      data.append("image", this.product.image);
+      data.append("image", this.image);
       axios
-        .post("/api/products", data, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
+        .post("/api/products", data, config)
         .then(res => {
-          console.log(res);
           if (res.data.ok) {
             this.product = {};
             this.$router.push({ name: "admin-products" });
@@ -251,7 +278,11 @@ export default {
           }
         })
         .catch(e => {
-          console.log(e);
+          this.error_name = e.response.data.errors.name[0];
+          this.error_description = e.response.data.errors.description[0];
+          this.error_short_description =
+            e.response.data.errors.short_description[0];
+          this.error_image = e.response.data.errors.image[0];
         });
     },
     editProduct() {

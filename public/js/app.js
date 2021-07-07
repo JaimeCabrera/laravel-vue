@@ -5968,6 +5968,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var token = localStorage.getItem("token");
 
 
@@ -5978,7 +5994,12 @@ var token = localStorage.getItem("token");
   data: function data() {
     return {
       product: {
-        price: "0"
+        name: "",
+        category_id: "",
+        short_description: "",
+        description: "",
+        price: "0",
+        image: ""
       },
       categories: [],
       selected: "",
@@ -5986,7 +6007,11 @@ var token = localStorage.getItem("token");
       productId: "",
       image: "",
       imagePreview: null,
-      showPreview: false
+      showPreview: false,
+      error_name: null,
+      error_description: null,
+      error_short_description: null,
+      error_image: null
     };
   },
   mounted: function mounted() {
@@ -6008,7 +6033,8 @@ var token = localStorage.getItem("token");
   },
   methods: {
     onImageChange: function onImageChange(e) {
-      this.product.image = e.target.files[0]; // console.log(this.product.image);
+      this.image = e.target.files[0]; // this.product.image = e.target.files[0];
+      // console.log(this.product.image);
 
       var reader = new FileReader();
       reader.addEventListener("load", function () {
@@ -6016,9 +6042,9 @@ var token = localStorage.getItem("token");
         this.imagePreview = reader.result;
       }.bind(this), false);
 
-      if (this.product.image) {
-        if (/\.(jpe?g|png|gif)$/i.test(this.product.image.name)) {
-          reader.readAsDataURL(this.product.image);
+      if (this.image) {
+        if (/\.(jpe?g|png|gif)$/i.test(this.image.name)) {
+          reader.readAsDataURL(this.image);
         }
       }
     },
@@ -6030,7 +6056,6 @@ var token = localStorage.getItem("token");
           Authorization: "Bearer ".concat(token)
         }
       }).then(function (res) {
-        console.log(res);
         _this.categories = res.data.categories;
       })["catch"](function (e) {
         console.log(e);
@@ -6044,20 +6069,19 @@ var token = localStorage.getItem("token");
       //   Authorization: `Bearer ${token}`,
       //   _token: "{{ csrf_token() }}"
       // };
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      };
       var data = new FormData();
       data.append("name", this.product.name);
       data.append("short_description", this.product.short_description);
       data.append("description", this.product.description);
       data.append("category_id", this.selected);
       data.append("price", this.product.price);
-      data.append("image", this.product.image);
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/products", data, {
-        headers: {
-          Authorization: "Bearer ".concat(token)
-        }
-      }).then(function (res) {
-        console.log(res);
-
+      data.append("image", this.image);
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/products", data, config).then(function (res) {
         if (res.data.ok) {
           _this2.product = {};
 
@@ -6068,7 +6092,10 @@ var token = localStorage.getItem("token");
           _this2.editMode = false;
         }
       })["catch"](function (e) {
-        console.log(e);
+        _this2.error_name = e.response.data.errors.name[0];
+        _this2.error_description = e.response.data.errors.description[0];
+        _this2.error_short_description = e.response.data.errors.short_description[0];
+        _this2.error_image = e.response.data.errors.image[0];
       });
     },
     editProduct: function editProduct() {
@@ -47110,115 +47137,65 @@ var render = function() {
                       _vm._v("Seleciona la Categoria")
                     ]),
                     _vm._v(" "),
-                    _vm.editMode
-                      ? _c(
-                          "select",
+                    _c(
+                      "select",
+                      {
+                        directives: [
                           {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.selected,
-                                expression: "selected"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { id: "inputState" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.selected = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c(
-                              "option",
-                              { attrs: { selected: "", disabled: "" } },
-                              [_vm._v("categoria...")]
-                            ),
-                            _vm._v(" "),
-                            _vm._l(_vm.categories, function(category, index) {
-                              return _c(
-                                "option",
-                                {
-                                  key: index,
-                                  domProps: { value: category.id }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                      " +
-                                      _vm._s(category.name)
-                                  )
-                                ]
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.selected,
+                            expression: "selected"
+                          }
+                        ],
+                        staticClass: "form-select",
+                        class: {
+                          "is-invalid": !_vm.selected,
+                          "": _vm.selected
+                        },
+                        attrs: { id: "inputState", required: "" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.selected = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "option",
+                          { attrs: { selected: "", disabled: "", value: "" } },
+                          [_vm._v("Selecciona una categoría...")]
+                        ),
+                        _vm._v(" "),
+                        _vm._l(_vm.categories, function(category, index) {
+                          return _c(
+                            "option",
+                            { key: index, domProps: { value: category.id } },
+                            [
+                              _vm._v(
+                                "\n                      " +
+                                  _vm._s(category.name)
                               )
-                            })
-                          ],
-                          2
-                        )
-                      : _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.selected,
-                                expression: "selected"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: { id: "inputState" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.selected = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c(
-                              "option",
-                              { attrs: { selected: "", disabled: "" } },
-                              [_vm._v("categoria...")]
-                            ),
-                            _vm._v(" "),
-                            _vm._l(_vm.categories, function(category, index) {
-                              return _c(
-                                "option",
-                                {
-                                  key: index,
-                                  domProps: { value: category.id }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                      " +
-                                      _vm._s(category.name)
-                                  )
-                                ]
-                              )
-                            })
-                          ],
-                          2
-                        )
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "invalid-feedback" }, [
+                      _vm._v("Selecciona una categoria")
+                    ])
                   ])
                 ]),
                 _vm._v(" "),
@@ -47235,7 +47212,11 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "text", placeholder: "" },
+                    class: {
+                      "is-invalid": _vm.error_name,
+                      "": !_vm.error_name
+                    },
+                    attrs: { type: "text", required: "" },
                     domProps: { value: _vm.product.name },
                     on: {
                       input: function($event) {
@@ -47245,7 +47226,11 @@ var render = function() {
                         _vm.$set(_vm.product, "name", $event.target.value)
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "invalid-feedback" }, [
+                    _vm._v(_vm._s(_vm.error_name))
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col" }, [
@@ -47286,6 +47271,10 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("VueTrix", {
+                        class: {
+                          "is-invalid": _vm.error_short_description,
+                          "": !_vm.error_short_description
+                        },
                         attrs: { placeholder: "Escriba la descripción corta" },
                         model: {
                           value: _vm.product.short_description,
@@ -47294,7 +47283,15 @@ var render = function() {
                           },
                           expression: "product.short_description"
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "invalid-feedback" }, [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(_vm.error_short_description) +
+                            "\n                  "
+                        )
+                      ])
                     ],
                     1
                   )
@@ -47310,6 +47307,10 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("VueTrix", {
+                        class: {
+                          "is-invalid": _vm.error_description,
+                          "": !_vm.error_description
+                        },
                         model: {
                           value: _vm.product.description,
                           callback: function($$v) {
@@ -47317,7 +47318,11 @@ var render = function() {
                           },
                           expression: "product.description"
                         }
-                      })
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "invalid-feedback" }, [
+                        _vm._v(_vm._s(_vm.error_description))
+                      ])
                     ],
                     1
                   )
@@ -47333,13 +47338,21 @@ var render = function() {
                     _vm._v(" "),
                     _c("input", {
                       staticClass: "form-control-file btn",
+                      class: {
+                        "is-invalid": _vm.error_image,
+                        "": !_vm.error_image
+                      },
                       attrs: {
                         type: "file",
                         name: "image",
                         accept: "image/png, image/jpeg"
                       },
                       on: { change: _vm.onImageChange }
-                    })
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "invalid-feedback" }, [
+                      _vm._v("Selecciona una imagen")
+                    ])
                   ]),
                   _vm._v(" "),
                   _c("img", {
