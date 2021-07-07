@@ -6754,6 +6754,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -48108,21 +48146,23 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("span", { staticClass: "b" }, [
-                  _vm._v("Categoria " + _vm._s(_vm.category.name))
+                  _vm._v("Categoria "),
+                  _c("a", { attrs: { href: "" } }, [
+                    _vm._v(_vm._s(_vm.category.name))
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("h4", [_vm._v("Descripcion")]),
+                _c("h4", [_vm._v("Información")]),
                 _vm._v(" "),
                 _c("p", {
                   staticClass: " descripcion-producto",
-                  domProps: { innerHTML: _vm._s(_vm.product.description) }
+                  domProps: { innerHTML: _vm._s(_vm.product.short_description) }
                 }),
                 _vm._v(" "),
                 _c(
                   "a",
                   {
-                    staticClass:
-                      "btn btn-outline-primary btn-lg mb-5 text-uppercase",
+                    staticClass: "btn btn-outline-primary mb-5 text-uppercase",
                     attrs: { href: "" }
                   },
                   [_vm._v("Solicitar Cotización")]
@@ -48140,32 +48180,68 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row mb-5" }, [
-            _c(
-              "div",
-              { staticClass: "col-12 mb-5 mt-5" },
-              [
-                _c("h3", { staticClass: "text-primary" }, [
-                  _vm._v("Productos Relacionados:")
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _vm._l(_vm.products, function(product, index) {
-                  return _c(
-                    "div",
-                    { key: index, staticClass: "col-md-3 mt-5" },
-                    [_c("product-item", { attrs: { product: product } })],
-                    1
-                  )
-                }),
-                _vm._v(" "),
-                _c("hr")
-              ],
-              2
-            )
+          _c("div", { staticClass: "row pt-4" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c(
+                "div",
+                { staticClass: "accordion", attrs: { id: "descripcion" } },
+                [
+                  _c("div", { staticClass: "accordion-item " }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "accordion-collapse collapse ",
+                        attrs: {
+                          id: "collapseOne",
+                          "aria-labelledby": "headingOne",
+                          "data-bs-parent": "#descripcion"
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "accordion-body" }, [
+                          _c("p", {
+                            staticClass: " descripcion-producto",
+                            domProps: {
+                              innerHTML: _vm._s(_vm.product.description)
+                            }
+                          })
+                        ])
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
           ])
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          { staticClass: "row d-flex" },
+          [
+            _c(
+              "h3",
+              { staticClass: "text-primary justify-content-center mb-3" },
+              [_vm._v("\n        Productos Relacionados:\n      ")]
+            ),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm._l(_vm.products, function(product, index) {
+              return _c(
+                "div",
+                { key: index, staticClass: "col-md-3 mt-5" },
+                [_c("product-item", { attrs: { product: product } })],
+                1
+              )
+            })
+          ],
+          2
+        )
       ]),
       _vm._v(" "),
       _c("footer-component")
@@ -48183,6 +48259,35 @@ var staticRenderFns = [
         _c("div", { staticClass: "container" })
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "h2",
+      { staticClass: "accordion-header", attrs: { id: "headingOne" } },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "accordion-button",
+            attrs: {
+              type: "button",
+              "data-bs-toggle": "collapse",
+              "data-bs-target": "#collapseOne",
+              "aria-expanded": "true",
+              "aria-controls": "collapseOne"
+            }
+          },
+          [
+            _vm._v(
+              "\n                  Descripcion del producto\n                "
+            )
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true

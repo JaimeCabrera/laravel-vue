@@ -28,12 +28,15 @@
             <p class="text-black-50 mt-3 precio">
               Precio: ${{ product.price }}
             </p>
-            <span class="b">Categoria {{ category.name }}</span>
-            <h4>Descripcion</h4>
-            <p v-html="product.description" class=" descripcion-producto"></p>
-            <a
-              class="btn btn-outline-primary btn-lg mb-5 text-uppercase"
-              href=""
+            <span class="b"
+              >Categoria <a href="">{{ category.name }}</a>
+            </span>
+            <h4>Información</h4>
+            <p
+              v-html="product.short_description"
+              class=" descripcion-producto"
+            ></p>
+            <a class="btn btn-outline-primary mb-5 text-uppercase" href=""
               >Solicitar Cotización</a
             >
 
@@ -43,22 +46,57 @@
             <social-links-component></social-links-component>
           </div>
         </div>
-        <div class="row mb-5">
-          <div class="col-12 mb-5 mt-5">
-            <h3 class="text-primary">Productos Relacionados:</h3>
-            <hr />
-            <div
-              v-for="(product, index) in products"
-              :key="index"
-              class="col-md-3 mt-5"
-            >
-              <product-item :product="product"></product-item>
+        <div class="row pt-4">
+          <div class="col-12">
+            <div class="accordion" id="descripcion">
+              <div class="accordion-item ">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Descripcion del producto
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse "
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#descripcion"
+                >
+                  <div class="accordion-body">
+                    <p
+                      v-html="product.description"
+                      class=" descripcion-producto"
+                    ></p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <hr />
+            <!-- <h4>Descripcion</h4> -->
           </div>
         </div>
       </div>
     </section>
+    <div class="container">
+      <div class="row d-flex">
+        <h3 class="text-primary justify-content-center mb-3">
+          Productos Relacionados:
+        </h3>
+        <hr />
+        <div
+          v-for="(product, index) in products"
+          :key="index"
+          class="col-md-3 mt-5"
+        >
+          <product-item :product="product"></product-item>
+        </div>
+      </div>
+    </div>
     <footer-component></footer-component>
   </div>
 </template>
