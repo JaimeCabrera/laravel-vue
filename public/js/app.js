@@ -5190,6 +5190,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["product"]
 });
@@ -5288,6 +5291,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -5303,6 +5308,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5972,6 +5985,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 var token = localStorage.getItem("token");
 
 
@@ -5987,7 +6001,8 @@ var token = localStorage.getItem("token");
         short_description: "",
         description: "",
         price: "0",
-        image: ""
+        image: "",
+        max: 255
       },
       categories: [],
       selected: "",
@@ -12268,7 +12283,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*\r\n* Product\r\n*/\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\n}\na,\r\na:focus,\r\na:active,\r\na:hover {\r\n  text-decoration: none;\n}\na {\r\n  transition: all 0.3s;\n}\n.product {\r\n  position: relative;\r\n  width: 335px;\r\n  max-width: 100%;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  background-color: #ffffff;\r\n  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);\r\n  border-radius: 10px 100px 70px 70px;\r\n  padding: 30px 10px 40px 20px;\n}\n@media (min-width: 576px) {\n.product {\r\n    padding: 48px 10px 68px 36px;\n}\n}\n.product .button {\r\n  margin-top: 20px;\n}\n.product .link-border {\r\n  margin-top: 20px;\r\n  margin-left: 10px;\r\n  display: inline-block;\n}\nh3.product-title {\r\n  color: #999999;\r\n  font-weight: 700;\n}\nh4.product-title {\r\n  color: #454545;\r\n  font-weight: 700;\n}\n.product-img {\r\n  position: absolute;\r\n  top: -8px;\r\n  right: -12px;\r\n  margin: 0;\r\n  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);\r\n  border-radius: 10em;\r\n  max-width: 50%;\n}\n@media (min-width: 576px) {\n.product-img {\r\n    max-width: 100%;\n}\n}\n.product-price {\r\n  display: inline-block;\r\n  color: #2665d6;\n}\n.product-price-header {\r\n  margin-top: 23px;\r\n  display: flex;\r\n  align-items: flex-start;\n}\n.product-price-currency {\r\n  font-size: 20px;\r\n  font-weight: 500;\r\n  padding-top: 6px;\r\n  padding-right: 2px;\n}\n.product-price-value {\r\n  font-size: 40px;\r\n  font-weight: 300;\r\n  line-height: 1;\n}\n.product-price-footer {\r\n  text-transform: uppercase;\r\n  text-align: right;\r\n  line-height: 1.1;\n}\n.product-text {\r\n  margin-top: 25px;\n}\r\n/* .button-primary,\r\n.button-primary:focus {\r\n  color: #ffffff;\r\n  background-color: #71b85f;\r\n  border-color: #71b85f;\r\n} */\n.button {\r\n  position: relative;\r\n  overflow: hidden;\r\n  display: inline-block;\r\n  padding: 22px 60px;\r\n  font-size: 14px;\r\n  line-height: 1.25;\r\n  border: 0;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  vertical-align: middle;\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n  transition: 250ms all ease-in-out;\r\n  border-radius: 10em;\r\n  box-shadow: inset 0px -4px 2px rgba(0, 0, 0, 0.25);\n}\r\n/* .button-primary,\r\n.button-primary:focus {\r\n  color: #ffffff;\r\n  background-color: #71b85f;\r\n  border-color: #71b85f;\r\n} */\n.btn-primary:hover,\r\n.btn-primary:active,\r\n.btn-primary.active {\r\n  color: #7c7a7a;\r\n  background-color: #2c343b;\r\n  border-color: #2c343b;\n}\n.product .button {\r\n  margin-top: 20px;\n}\na,\r\na:focus,\r\na:active {\r\n  color: #000000;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*\r\n* Product\r\n*/\n*,\r\n*::before,\r\n*::after {\r\n  box-sizing: border-box;\n}\na,\r\na:focus,\r\na:active,\r\na:hover {\r\n  text-decoration: none;\n}\na {\r\n  transition: all 0.3s;\n}\n.product {\r\n  position: relative;\r\n  width: 335px;\r\n  min-height: 600px;\r\n  /* max-width: 100%; */\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  background-color: #ffffff;\r\n  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);\r\n  border-radius: 10px 100px 70px 70px;\r\n  padding: 30px 10px 40px 20px;\n}\n@media (min-width: 576px) {\n.product {\r\n    padding: 48px 10px 68px 36px;\n}\n}\n.product .button {\r\n  margin-top: 20px;\n}\n.product .link-border {\r\n  margin-top: 20px;\r\n  margin-left: 10px;\r\n  display: inline-block;\n}\nh3.product-title {\r\n  color: #999999;\r\n  font-weight: 700;\n}\nh4.product-title {\r\n  color: #454545;\r\n  font-weight: 700;\n}\n.product-img {\r\n  position: absolute;\r\n  top: -8px;\r\n  right: -12px;\r\n  margin: 0;\r\n  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);\r\n  border-radius: 10em;\r\n  max-width: 50%;\n}\n@media (min-width: 576px) {\n.product-img {\r\n    max-width: 100%;\n}\n}\n.product-price {\r\n  display: inline-block;\r\n  color: #2665d6;\n}\n.product-price-header {\r\n  margin-top: 23px;\r\n  display: flex;\r\n  align-items: flex-start;\n}\n.product-price-currency {\r\n  font-size: 20px;\r\n  font-weight: 500;\r\n  padding-top: 6px;\r\n  padding-right: 2px;\n}\n.product-price-value {\r\n  font-size: 40px;\r\n  font-weight: 300;\r\n  line-height: 1;\n}\n.product-price-footer {\r\n  text-transform: uppercase;\r\n  text-align: right;\r\n  line-height: 1.1;\n}\n.product-text {\r\n  margin-top: 25px;\r\n  min-height: 150px;\n}\r\n/* .button-primary,\r\n.button-primary:focus {\r\n  color: #ffffff;\r\n  background-color: #71b85f;\r\n  border-color: #71b85f;\r\n} */\n.button {\r\n  position: relative;\r\n  overflow: hidden;\r\n  display: inline-block;\r\n  padding: 22px 60px;\r\n  font-size: 14px;\r\n  line-height: 1.25;\r\n  border: 0;\r\n  font-weight: 700;\r\n  text-transform: uppercase;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n  text-align: center;\r\n  cursor: pointer;\r\n  vertical-align: middle;\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n  transition: 250ms all ease-in-out;\r\n  border-radius: 10em;\r\n  box-shadow: inset 0px -4px 2px rgba(0, 0, 0, 0.25);\n}\r\n/* .button-primary,\r\n.button-primary:focus {\r\n  color: #ffffff;\r\n  background-color: #71b85f;\r\n  border-color: #71b85f;\r\n} */\n.btn-primary:hover,\r\n.btn-primary:active,\r\n.btn-primary.active {\r\n  color: #7c7a7a;\r\n  background-color: #2c343b;\r\n  border-color: #2c343b;\n}\n.product .button {\r\n  margin-top: 20px;\n}\na,\r\na:focus,\r\na:active {\r\n  color: #000000;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12316,7 +12331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.slide-right {\r\n  -webkit-animation: slide-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;\r\n          animation: slide-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;\n}\n@-webkit-keyframes slide-right {\n0% {\r\n    transform: translateX(0);\n}\n100% {\r\n    transform: translateX(5vh);\n}\n}\n@keyframes slide-right {\n0% {\r\n    transform: translateX(0);\n}\n100% {\r\n    transform: translateX(5vh);\n}\n}\n.page-title {\r\n  font-weight: 700;\r\n  /* color: #2665d6; */\r\n  color: #ececec;\n}\n.bg-opacity {\r\n  border-radius: 5px;\r\n  background-color: rgba(24, 44, 100, 0.171);\n}\n.slider {\r\n  background-size: cover;\r\n  background-image: url(\"/img/banner1.jpg\");\r\n  background-repeat: no-repeat;\r\n  height: 60vh;\r\n  background-attachment: fixed;\n}\n.btn-rounded {\r\n  background-color: #2665d6;\r\n  border-radius: 25px 25px 25px 24px !important;\n}\n.btn-rounded:hover {\r\n  transition: 0.9 ease;\r\n  background-color: #2453aa;\n}\n.jumbotron {\r\n  height: 60vh !important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.slide-right {\r\n  -webkit-animation: slide-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;\r\n          animation: slide-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;\n}\n@media screen and (min-width: 768px) {\n@-webkit-keyframes slide-right {\n0% {\r\n      transform: translateX(0);\n}\n100% {\r\n      transform: translateX(0vh);\n}\n}\n@keyframes slide-right {\n0% {\r\n      transform: translateX(0);\n}\n100% {\r\n      transform: translateX(0vh);\n}\n}\n}\n@media screen and (min-width: 1024px) {\n@-webkit-keyframes slide-right {\n0% {\r\n      transform: translateX(0);\n}\n100% {\r\n      transform: translateX(5vh);\n}\n}\n@keyframes slide-right {\n0% {\r\n      transform: translateX(0);\n}\n100% {\r\n      transform: translateX(5vh);\n}\n}\n}\n.page-title {\r\n  font-weight: 700;\r\n  /* color: #2665d6; */\r\n  color: #ececec;\n}\n.bg-opacity {\r\n  border-radius: 5px;\r\n  background-color: rgba(24, 44, 100, 0.171);\n}\n.slider {\r\n  background-size: cover;\r\n  background-image: url(\"/img/banner1.jpg\");\r\n  background-repeat: no-repeat;\r\n  height: 60vh;\r\n  background-attachment: fixed;\n}\n.btn-rounded {\r\n  background-color: #2665d6;\r\n  border-radius: 25px 25px 25px 24px !important;\n}\n.btn-rounded:hover {\r\n  transition: 0.9 ease;\r\n  background-color: #2453aa;\n}\n.jumbotron {\r\n  height: 60vh !important;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -45999,7 +46014,7 @@ var staticRenderFns = [
         staticClass: "btn-float d-flex justify-content-around",
         attrs: {
           href:
-            "https://web.whatsapp.com/send?phone=593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda.",
+            "https://wa.me/593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda.",
           target: "_blank"
         }
       },
@@ -46266,7 +46281,11 @@ var render = function() {
       _vm._v(" "),
       _c("p", {
         staticClass: "product-text",
-        domProps: { innerHTML: _vm._s(_vm.product.short_description) }
+        domProps: {
+          innerHTML: _vm._s(
+            _vm.product.short_description.substring(0, 255) + "..."
+          )
+        }
       }),
       _vm._v(" "),
       _c(
@@ -46422,7 +46441,10 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c(
                     "a",
-                    { staticClass: "btn btn-outline-primary btn-lg mt-3 mb-5" },
+                    {
+                      staticClass: "btn btn-outline-primary btn-lg mt-3 mb-5",
+                      attrs: { href: "mailto:solucionesambientalesec.com" }
+                    },
                     [_vm._v("Enviar Mensaje")]
                   )
                 ])
@@ -46528,13 +46550,31 @@ var staticRenderFns = [
       _c("h3", [_vm._v("Redes Sociales")]),
       _vm._v(" "),
       _c("div", { staticClass: "row mt-4" }, [
-        _c("a", { staticClass: "text-white", attrs: { href: "" } }, [
-          _c("i", { staticClass: "fab fa-facebook-square fa-4x" })
-        ]),
+        _c(
+          "a",
+          {
+            staticClass: "text-white",
+            attrs: {
+              href:
+                "https://www.facebook.com/Soluciones-Ambientales-EC-107173774381303",
+              target: "_blank"
+            }
+          },
+          [_c("i", { staticClass: "fab fa-facebook-square fa-4x" })]
+        ),
         _vm._v(" "),
-        _c("a", { staticClass: "text-white", attrs: { href: "" } }, [
-          _c("i", { staticClass: "fab fa-whatsapp-square fa-4x   " })
-        ])
+        _c(
+          "a",
+          {
+            staticClass: "text-white",
+            attrs: {
+              href:
+                "https://wa.me/593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda.",
+              target: "_blank"
+            }
+          },
+          [_c("i", { staticClass: "fab fa-whatsapp-square fa-4x   " })]
+        )
       ])
     ])
   },
@@ -46822,7 +46862,9 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c(
             "div",
-            { staticClass: "col-md-6 p-4 bg-opacity mt-5 slide-right " },
+            {
+              staticClass: "col-md-6 col-sm-12 p-4 bg-opacity mt-5 slide-right "
+            },
             [
               _c("h1", { staticClass: "page-title mt-2 " }, [
                 _vm._v("SOLUCIONES AMBIENTALES")
@@ -47318,7 +47360,10 @@ var render = function() {
                           "is-invalid": _vm.error_short_description,
                           "": !_vm.error_short_description
                         },
-                        attrs: { placeholder: "Escriba la descripción corta" },
+                        attrs: {
+                          placeholder: "Escriba la descripción corta",
+                          maxlength: _vm.max
+                        },
                         model: {
                           value: _vm.product.short_description,
                           callback: function($$v) {

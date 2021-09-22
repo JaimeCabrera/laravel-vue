@@ -3,7 +3,7 @@
     <div class="jumbotron jumbotron-fluid bg-transparent">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 p-4 bg-opacity mt-5 slide-right ">
+          <div class="col-md-6 col-sm-12 p-4 bg-opacity mt-5 slide-right ">
             <h1 class="page-title mt-2 ">SOLUCIONES AMBIENTALES</h1>
             <p class="lead mt-2 subtitle text-white font-weight-bold">
               EQUIPOS E INSUMOS PARA LABORATORIO.
@@ -28,12 +28,25 @@ export default {};
 .slide-right {
   animation: slide-right 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
 }
-@keyframes slide-right {
-  0% {
-    transform: translateX(0);
+@media screen and (min-width: 768px) {
+  @keyframes slide-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(0vh);
+    }
   }
-  100% {
-    transform: translateX(5vh);
+}
+
+@media screen and (min-width: 1024px) {
+  @keyframes slide-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(5vh);
+    }
   }
 }
 .page-title {

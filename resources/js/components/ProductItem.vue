@@ -24,7 +24,10 @@
 
       <!-- <div class="product-price-footer">per day</div> -->
     </div>
-    <p v-html="product.short_description" class="product-text"></p>
+    <p
+      v-html="product.short_description.substring(0, 255) + '...'"
+      class="product-text"
+    ></p>
     <router-link
       class="button btn-primary"
       :to="{ name: 'client-product-details', params: { id: product.id } }"
@@ -60,7 +63,8 @@ a {
 .product {
   position: relative;
   width: 335px;
-  max-width: 100%;
+  min-height: 600px;
+  /* max-width: 100%; */
   margin-left: auto;
   margin-right: auto;
   background-color: #ffffff;
@@ -141,6 +145,7 @@ h4.product-title {
 
 .product-text {
   margin-top: 25px;
+  min-height: 150px;
 }
 /* .button-primary,
 .button-primary:focus {

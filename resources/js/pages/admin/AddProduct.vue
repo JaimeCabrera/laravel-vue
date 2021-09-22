@@ -72,6 +72,7 @@
                     <label for="">Descripcion corta</label>
                     <VueTrix
                       placeholder="Escriba la descripción corta"
+                      :maxlength="max"
                       v-model="product.short_description"
                       :class="{
                         'is-invalid': error_short_description,
@@ -171,7 +172,8 @@ export default {
         short_description: "",
         description: "",
         price: "0",
-        image: ""
+        image: "",
+        max: 255
       },
       categories: [],
       selected: "",

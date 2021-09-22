@@ -24,10 +24,18 @@
         <div class="col-md-3 col-sm-12 mb-3">
           <h3>Redes Sociales</h3>
           <div class="row mt-4">
-            <a class="text-white" href="">
+            <a
+              class="text-white"
+              href="https://www.facebook.com/Soluciones-Ambientales-EC-107173774381303"
+              target="_blank"
+            >
               <i class="fab fa-facebook-square fa-4x"></i>
             </a>
-            <a class="text-white" href="">
+            <a
+              class="text-white"
+              href="https://wa.me/593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda."
+              target="_blank"
+            >
               <i class="fab fa-whatsapp-square fa-4x   "></i>
             </a>
           </div>

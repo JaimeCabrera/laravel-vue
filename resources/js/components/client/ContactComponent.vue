@@ -69,7 +69,9 @@
                 ></textarea>
               </div>
             </div>
-            <a class="btn btn-outline-primary btn-lg mt-3 mb-5"
+            <a
+              href="mailto:solucionesambientalesec.com"
+              class="btn btn-outline-primary btn-lg mt-3 mb-5"
               >Enviar Mensaje</a
             >
           </form>
