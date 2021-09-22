@@ -1,7 +1,7 @@
 <template>
   <a
     class="btn-float d-flex justify-content-around"
-    href="https://wa.me/593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda."
+    href="https://api.whatsapp.com/send?phone=593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda."
     target="_blank"
   >
     <i class="fab fa-whatsapp fa-2x mx-2"></i>

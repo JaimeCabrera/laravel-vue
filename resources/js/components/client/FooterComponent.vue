@@ -13,13 +13,13 @@
         </div>
         <div class="col-md-3 text-white">
           <h2 class="font-weight-bold">Dirección</h2>
-          <p class="text-lg mt-4">Samborondon</p>
+          <p class="text-lg mt-4">Samborondón</p>
           <p class="text-lg">Guayaquil, Ecuador</p>
         </div>
         <div class="col-md-3 col-sm-12 mb-3">
           <h3>Contacto</h3>
-          <p class="text-lg mt-4">Email: solcuionesambientales@email.cxom</p>
-          <p class="text-lg">Telefonos:</p>
+          <p class="text-lg mt-4">Email: solucionesambientalesec@email.com</p>
+          <p class="text-lg">Telefono:+593969572630</p>
         </div>
         <div class="col-md-3 col-sm-12 mb-3">
           <h3>Redes Sociales</h3>
@@ -33,7 +33,7 @@
             </a>
             <a
               class="text-white"
-              href="https://wa.me/593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda."
+              href="https://api.whatsapp.com/send?phone=593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda."
               target="_blank"
             >
               <i class="fab fa-whatsapp-square fa-4x   "></i>
