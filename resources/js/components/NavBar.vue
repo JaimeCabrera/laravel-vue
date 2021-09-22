@@ -56,13 +56,14 @@
                 >
               </li>
               <li class="nav-item">
-                <router-link
+                <a href="#contact" class="nav-link mx-2">Contacto</a>
+                <!-- <router-link
                   class="nav-link mx-2"
                   :to="{
                     name: 'index'
                   }"
                   >Contacto</router-link
-                >
+                > -->
               </li>
             </ul>
           </div>

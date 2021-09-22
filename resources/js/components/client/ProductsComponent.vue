@@ -17,21 +17,13 @@
         </div>
       </div>
       <div class="row d-flex flex-wrap mt-3">
-        <div v-for="(product, index) in products" :key="index" class="col-md-3">
+        <div
+          v-for="(product, index) in products"
+          :key="index"
+          class=" col-sm-12 col-md-4 col-lg-4"
+        >
           <product-item :product="product"></product-item>
         </div>
-        <!-- <div class="col-md-3">
-          <product-component></product-component>
-        </div>
-        <div class="col-md-3">
-          <product-component></product-component>
-        </div>
-        <div class="col-md-3">
-          <product-component></product-component>
-        </div>
-        <div class="col-md-3">
-          <product-component></product-component>
-        </div> -->
       </div>
     </div>
   </div>

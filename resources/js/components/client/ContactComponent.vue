@@ -1,5 +1,6 @@
 <template>
   <section
+    id="contact"
     class="container-fluid   py-5 bg-white "
     data-aos="zoom-in"
     data-aos-anchor-placement="center"
