@@ -8,9 +8,12 @@ $secondary: #2c343b;
   padding-top: 35px;
 }
 .subtitle-p {
-  font-size: 50px;
+  font-size: 45px;
+  border-bottom: 3px solid#2665d6;
   font-weight: 500;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   color: $primary;
   padding-top: 25px;
 }
@@ -29,10 +32,10 @@ $secondary: #2c343b;
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav-bar></nav-bar>
+    <!-- <nav-bar></nav-bar> -->
     <section class="bg-light ">
       <div class="slider-products pt-5">
         <div class="jumbotron jumbotron-fluid bg-transparent">
@@ -36,7 +36,9 @@
               v-html="product.short_description"
               class=" descripcion-producto"
             ></p>
-            <a class="btn btn-outline-primary mb-5 text-uppercase" href=""
+            <a
+              class="btn btn-outline-primary mb-5 text-uppercase"
+              href="mailto:soluciones@admin.com"
               >Solicitar Cotización</a
             >
 
@@ -59,7 +61,7 @@
                     aria-expanded="true"
                     aria-controls="collapseOne"
                   >
-                    Descripcion del producto
+                    Descripción del producto
                   </button>
                 </h2>
                 <div
@@ -97,7 +99,6 @@
         </div>
       </div>
     </div>
-    <footer-component></footer-component>
   </div>
 </template>
 

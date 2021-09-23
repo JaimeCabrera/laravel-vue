@@ -9,11 +9,19 @@
       ><i class="fab fa-facebook-f"></i
     ></a>
     <!-- Whatsapp -->
-    <a class="btn btn-primary whatsapp mx-1" href="#!" role="button"
+    <a
+      class="btn btn-primary whatsapp mx-1"
+      href="https://api.whatsapp.com/send?phone=593969572630&text=%C2%A1Hola!%20Necesito%20de%20su%20ayuda."
+      target="_blank"
+      role="button"
       ><i class="fab fa-whatsapp"></i
     ></a>
     <!-- Google -->
-    <a class="btn btn-primary email" href="#!" role="button"
+    <a
+      class="btn btn-primary email"
+      href="mailto:admin@admin.com"
+      target="_blank"
+      role="button"
       ><i class="fab fa-google"></i
     ></a>
   </div>

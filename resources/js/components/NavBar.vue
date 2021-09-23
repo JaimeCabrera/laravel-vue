@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar navbar-expand-lg p-3  shadow-sm"
+    class="navbar navbar-expand-lg p-2  shadow-sm"
     :class="clase"
     v-on:scroll.passive="handleScroll"
   >
@@ -56,14 +56,13 @@
                 >
               </li>
               <li class="nav-item">
-                <a href="#contact" class="nav-link mx-2">Contacto</a>
-                <!-- <router-link
+                <router-link
                   class="nav-link mx-2"
                   :to="{
-                    name: 'index'
+                    name: 'contact-page'
                   }"
                   >Contacto</router-link
-                > -->
+                >
               </li>
             </ul>
           </div>
