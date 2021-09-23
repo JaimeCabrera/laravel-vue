@@ -11,7 +11,7 @@
     <img
       class="product-img img-fluid shadow"
       :src="'/storage/' + product.image"
-      alt="imagen del producto"
+      v-bind:alt="imagen + 'product.name'"
       width="176"
       height="88"
     />

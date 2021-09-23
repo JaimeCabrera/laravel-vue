@@ -3,13 +3,15 @@
     <div class="container text-white">
       <div class="row p-3 ">
         <div class="col-md-3  col-sm-12 mb-2 d-flex justify-content-center">
-          <img
-            :src="'/img/logo_secondary.svg'"
-            class="img-fluid"
-            width="100px"
-            height="100px"
-            alt="logo soluciones ambientales"
-          />
+          <a href="#inicio">
+            <img
+              :src="'/img/logo_secondary.svg'"
+              class="img-fluid"
+              width="100px"
+              height="100px"
+              alt="logo soluciones ambientales"
+            />
+          </a>
         </div>
         <div class="col-md-3 text-white">
           <h2 class="font-weight-bold">Dirección</h2>
@@ -49,7 +51,7 @@
         </div>
         <span class="float-end"
           >Developed by
-          <a href="https://github.com/JaimeCabrera" target="_blank">Jaime C</a>
+          <a href="https://github.com/JaimeCabrera" target="_blank">Jaime</a>
         </span>
       </div>
     </div>

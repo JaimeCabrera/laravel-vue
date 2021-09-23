@@ -1,5 +1,5 @@
 <template>
-  <section class="slider pt-5">
+  <section class="slider pt-5" id="inicio">
     <div class="jumbotron jumbotron-fluid bg-transparent">
       <div class="container">
         <div class="row">

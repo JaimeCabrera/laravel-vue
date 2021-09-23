@@ -26,7 +26,11 @@
             </button>
           </div>
         </div>
-        <div class="col-sm-8 col-md-8 col-lg-10 bg-products ">
+        <!-- si existen producto -->
+        <div
+          v-if="products.length > 0"
+          class="col-sm-8 col-md-8 col-lg-10 bg-products "
+        >
           <div class="row p-2 mt-5 ">
             <div v-if="loading">
               <loader></loader>
@@ -41,6 +45,10 @@
             </div>
           </div>
         </div>
+        <!-- caso contario -->
+        <div v-else class="col-sm-6 col-md-6 col-lg-8 bg-products ">
+          <not-content title="Productos" />
+        </div>
       </div>
     </div>
   </div>
@@ -49,9 +57,10 @@
 <script>
 import SliderCcomponent from "../../components/client/SliderCcomponent.vue";
 import Loader from "../../components/Loader.vue";
+import NotContent from "../../components/NotContent.vue";
 import ProductItem from "../../components/ProductItem.vue";
 export default {
-  components: { ProductItem, Loader, SliderCcomponent },
+  components: { ProductItem, Loader, SliderCcomponent, NotContent },
   data() {
     return {
       products: {},

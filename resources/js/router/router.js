@@ -14,6 +14,9 @@ import Categories from "../pages/admin/Categories";
 import AddProduct from "../pages/admin/AddProduct";
 import ProductDetails from "../pages/client/ProductDetails";
 
+// default page
+import NotFoundComponent from "../components/NotFoundComponent.vue";
+
 Vue.use(VueRouter);
 
 export default new VueRouter({
@@ -50,6 +53,10 @@ export default new VueRouter({
           path: "/contact",
           component: ContactPage,
           name: "contact-page"
+        },
+        {
+          path: "*",
+          component: NotFoundComponent
         }
       ]
     },
