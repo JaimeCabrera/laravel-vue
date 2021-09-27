@@ -19,7 +19,7 @@ export default {
 <style>
 .slider-contact {
   height: 35vh;
-  background-size: contain;
+  background-size: cover;
   background-image: url("/img/contact.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
