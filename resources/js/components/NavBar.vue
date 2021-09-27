@@ -6,17 +6,17 @@
   >
     <div class="container">
       <div class="row">
-        <div class="col-md-7 col-sm-4">
-          <router-link class="navbar-brand" :to="{ name: 'index' }">
+        <div class="col-md-7 col-sm-6">
+          <router-link class="navbar-brand " :to="{ name: 'index' }">
             <img
               :src="'/img/' + logo"
-              class="img"
+              class="img d-none d-sm-inline d-md-inline"
               width="80"
               height="60"
               alt="logo soluciones ambientales"
             />
             <span class="text-uppercase" :class="text_name"
-              >Soluciones Ambientales</span
+              >Soluciones Ambientales EC</span
             >
           </router-link>
           <button
@@ -31,7 +31,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
-        <div class="col-md-5 mt-2">
+        <div class="col-md-5  mt-2">
           <div
             class="px-5 collapse navbar-collapse"
             id="navbarSupportedContent"

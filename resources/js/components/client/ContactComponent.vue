@@ -1,7 +1,7 @@
 <template>
   <section
     id="contact"
-    class="container-fluid   py-5 bg-white "
+    class="container-fluid bg-transparent  py-5 "
     data-aos="zoom-in"
     data-aos-anchor-placement="center"
     data-aos-offset="200"

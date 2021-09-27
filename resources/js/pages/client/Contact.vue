@@ -1,5 +1,12 @@
 <template>
-  <contact-component></contact-component>
+  <div class="bg-transparent">
+    <div class="slider-contact pt-5">
+      <div class="jumbotron jumbotron-fluid bg-transparent">
+        <div class="container"></div>
+      </div>
+    </div>
+    <contact-component></contact-component>
+  </div>
 </template>
 
 <script>
@@ -9,4 +16,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.slider-contact {
+  height: 35vh;
+  background-size: contain;
+  background-image: url("/img/contact.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+</style>

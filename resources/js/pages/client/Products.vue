@@ -133,7 +133,7 @@ $secondary: #2c343b; */
 .slider-products {
   height: 35vh;
   background-size: cover;
-  background-image: url("/img/bg-products.jpg");
+  background-image: url("/img/bg-products.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

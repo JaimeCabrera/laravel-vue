@@ -16,13 +16,15 @@ import FooterComponent from "../../components/client/FooterComponent.vue";
 import ProductsComponent from "../../components/client/ProductsComponent.vue";
 import ServicesComponent from "../../components/client/ServicesComponent.vue";
 import SliderCcomponent from "../../components/client/SliderCcomponent.vue";
+import NotContent from "../../components/NotContent.vue";
 export default {
   components: {
     SliderCcomponent,
     ServicesComponent,
     ProductsComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    NotContent
   },
   mounted() {
     // console.log("items del index");

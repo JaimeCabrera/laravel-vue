@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-sm-12 p-4 bg-opacity mt-5 slide-right ">
-            <h1 class="page-title mt-2 ">SOLUCIONES AMBIENTALES</h1>
+            <h1 class="page-title mt-2 ">SOLUCIONES AMBIENTALES EC</h1>
             <p class="lead mt-2 subtitle text-white font-weight-bold">
               EQUIPOS E INSUMOS PARA LABORATORIO.
             </p>
@@ -61,7 +61,7 @@ export default {};
 
 .slider {
   background-size: cover;
-  background-image: url("/img/banner1.jpg");
+  background-image: url("/img/banner1.jpeg");
   background-repeat: no-repeat;
   height: 60vh;
   background-attachment: fixed;

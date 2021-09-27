@@ -6,7 +6,7 @@ import IndexPage from "../pages/client/Index";
 import ClientPage from "../pages/ClientPage.vue";
 import LoginPage from "../pages/client/Login";
 import ClientProducts from "../pages/client/Products";
-import ContactPage from "../components/client/ContactComponent";
+import ContactPage from "../pages/client/Contact";
 /* admin */
 import AdminPage from "../pages/AdminPage.vue";
 import Products from "../pages/admin/Products";
